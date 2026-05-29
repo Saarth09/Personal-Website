@@ -33,10 +33,10 @@ const observer = new IntersectionObserver(
 
 sections.forEach((s) => observer.observe(s));
 
-document.querySelectorAll(".nav-links a.active").forEach((el) => {
-  el.style.color = "var(--red)";
-});
-
 const style = document.createElement("style");
-style.textContent = `.nav-links a.active { color: var(--red) !important; }`;
+style.textContent = `.nav-links a.active {
+  background: var(--yellow);
+  color: var(--ink) !important;
+  text-shadow: none;
+}`;
 document.head.appendChild(style);

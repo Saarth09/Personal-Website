@@ -7,11 +7,12 @@
   <title>Saarth Kishore | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕷️</text></svg>" />
 </head>
 <body>
+  <div class="halftone-bg" aria-hidden="true"></div>
   <div class="web-overlay" aria-hidden="true"></div>
 
   <nav class="nav" id="nav">
@@ -31,8 +32,10 @@
   <header class="hero" id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
-      <p class="hero-tagline">With great code comes great responsibility</p>
-      <h1 class="hero-name">Saarth Kishore</h1>
+      <div class="speech-bubble hero-tagline-bubble">
+        <p class="hero-tagline">With great code comes great responsibility!</p>
+      </div>
+      <h1 class="hero-name"><span class="hero-name-line">Saarth</span> <span class="hero-name-line accent">Kishore</span></h1>
       <p class="hero-title">Software Engineer</p>
       <p class="hero-meta">UC Davis · Computer Engineering · Class of 2027</p>
       <div class="hero-cta">
@@ -50,8 +53,8 @@
   </header>
 
   <main>
-    <section class="section about" id="about">
-      <h2 class="section-title"><span class="title-accent">01</span> About Me</h2>
+    <section class="section about comic-panel" id="about">
+      <h2 class="section-title"><span class="title-burst">01</span> About Me</h2>
       <div class="about-grid">
         <p class="about-text">
           I'm a Computer Engineering student at UC Davis focused on building full-stack applications,
@@ -71,8 +74,8 @@
       </div>
     </section>
 
-    <section class="section education" id="education">
-      <h2 class="section-title"><span class="title-accent">02</span> Education</h2>
+    <section class="section education comic-panel" id="education">
+      <h2 class="section-title"><span class="title-burst">02</span> Education</h2>
       <article class="edu-card">
         <div class="edu-header">
           <h3>University of California, Davis</h3>
@@ -93,8 +96,8 @@
       </article>
     </section>
 
-    <section class="section skills" id="skills">
-      <h2 class="section-title"><span class="title-accent">03</span> Key Competencies</h2>
+    <section class="section skills comic-panel alt-panel" id="skills">
+      <h2 class="section-title"><span class="title-burst">03</span> Key Competencies</h2>
       <div class="skills-grid">
         <div class="skill-group">
           <h3>Languages</h3>
@@ -135,8 +138,8 @@
       </div>
     </section>
 
-    <section class="section projects" id="projects">
-      <h2 class="section-title"><span class="title-accent">04</span> Projects & Experience</h2>
+    <section class="section projects comic-panel" id="projects">
+      <h2 class="section-title"><span class="title-burst">04</span> Projects & Experience</h2>
       <div class="projects-grid">
 
         <article class="project-card featured">
@@ -255,8 +258,8 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact">
-      <h2 class="section-title"><span class="title-accent">05</span> Get In Touch</h2>
+    <section class="section contact comic-panel alt-panel" id="contact">
+      <h2 class="section-title"><span class="title-burst">05</span> Get In Touch</h2>
       <p class="contact-intro">Open to internships, collaborations, and interesting builds. Swing by anytime.</p>
       <div class="contact-grid">
         <a href="mailto:Saarth0909@gmail.com" class="contact-card">
