@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=8" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -17,21 +17,17 @@
   <div class="web-overlay" aria-hidden="true"></div>
 
   <div class="comic-stage" id="comicStage">
-    <nav class="comic-chrome-top" id="comicChromeTop" aria-label="Jump to section">
+    <nav class="comic-chrome-top" id="comicChromeTop" aria-label="Site navigation">
+      <button type="button" class="chrome-brand" id="chromeBrand" aria-label="Saarth Kishore — go to cover">
+        Saarth Kishore
+      </button>
       <div class="spread-tabs" id="spreadTabs"></div>
     </nav>
 
-    <button type="button" class="page-arrow page-arrow-prev" id="turnPrev" aria-label="Previous page">
-      <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M14 6L8 12L14 18" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
-
-    <div class="book-desk">
-      <div class="comic-book" id="comicBook" aria-live="polite">
+    <div class="comic-scroll" id="comicScroll" aria-live="polite" tabindex="-1">
 
       <!-- SPREAD 0: Front cover -->
-      <article class="comic-spread spread-cover active" data-spread="0" aria-label="Front cover">
+      <article class="comic-spread spread-cover" data-spread="0" aria-label="Front cover">
         <div class="comic-page page-cover">
           <div class="cover-border layout-cover">
             <div class="panel panel-hero-cover">
@@ -548,20 +544,13 @@
         </div>
       </article>
 
-      </div>
     </div>
-
-    <button type="button" class="page-arrow page-arrow-next" id="turnNext" aria-label="Next page">
-      <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M10 6L16 12L10 18" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-    </button>
 
     <div class="comic-chrome-bottom">
       <p class="spread-progress" id="spreadProgress" aria-live="polite">Spread 1 of 7 · Cover</p>
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=8"></script>
 </body>
 </html>
