@@ -209,7 +209,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: calc(var(--nav-height) + 2rem) 1.5rem 7rem;
+  padding: calc(var(--nav-height) + 2rem) 1.5rem 5rem;
   overflow: hidden;
   z-index: 1;
 }
@@ -220,15 +220,17 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 45%;
+  height: min(55vh, 520px);
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(255, 248, 231, 0.55) 45%,
+    rgba(255, 248, 231, 0.15) 20%,
+    rgba(255, 248, 231, 0.45) 45%,
+    rgba(255, 248, 231, 0.82) 70%,
     var(--paper) 100%
   );
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .hero-bg {
@@ -262,7 +264,7 @@ body {
       rgba(229, 25, 55, 0.1) 85px,
       transparent 86px
     );
-  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, black 20%, transparent 72%);
+  mask-image: radial-gradient(ellipse 110% 90% at 50% 26%, black 15%, transparent 68%);
 }
 
 .hero-content {
@@ -340,52 +342,13 @@ body {
   color: var(--ink);
 }
 
-/* Hero → main scroll transition */
-.hero-transition {
-  position: relative;
-  z-index: 2;
-  margin-top: -5rem;
-  line-height: 0;
-  pointer-events: none;
-}
-
-.hero-transition-wave {
-  display: block;
-  width: 100%;
-  height: clamp(3.5rem, 10vw, 6rem);
-}
-
-.hero-transition .wave-fill {
-  fill: var(--paper);
-}
-
-.hero-transition .wave-stroke {
-  stroke: var(--ink);
-}
-
-/* Main content area */
+/* Main content — overlaps hero fade for seamless blend */
 .main-content {
   position: relative;
   z-index: 1;
   background: var(--paper);
-  margin-top: -1px;
-}
-
-.main-content::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 10rem;
-  background: linear-gradient(
-    to bottom,
-    var(--paper) 0%,
-    rgba(255, 248, 231, 0.92) 35%,
-    transparent 100%
-  );
-  pointer-events: none;
-  z-index: 0;
+  margin-top: min(-18vh, -140px);
+  padding-top: min(14vh, 120px);
 }
 
 .main-content > .comic-panel {
@@ -403,7 +366,7 @@ body {
 }
 
 #about.comic-panel {
-  padding-top: 2rem;
+  padding-top: 0;
 }
 
 .comic-panel + .comic-panel::before {
