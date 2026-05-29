@@ -17,8 +17,9 @@
   --border: 3px solid var(--ink);
   --comic-shadow: 5px 5px 0 var(--ink);
   --comic-shadow-sm: 3px 3px 0 var(--ink);
-  --font-heading: "Plus Jakarta Sans", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  --font-hero: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-comic: "Bangers", cursive;
+  --font-body: "Comic Neue", "Comic Sans MS", cursive;
   --nav-height: 4.25rem;
 }
 
@@ -54,20 +55,63 @@ body {
   background-size: 8px 8px;
 }
 
-/* Subtle web lines on sky areas */
+/* Spider-web pattern — site-wide */
 .web-overlay {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.08;
-  background-image:
+  opacity: 1;
+  background:
+  repeating-conic-gradient(
+    from 0deg at 50% 50%,
+    transparent 0deg 11deg,
+    rgba(30, 111, 217, 0.14) 11deg 12deg
+  ),
+  repeating-radial-gradient(
+    circle at 50% 50%,
+    transparent 0,
+    transparent 28px,
+    rgba(30, 111, 217, 0.1) 29px,
+    transparent 30px
+  );
+  background-size: 100% 100%, 100% 100%;
+}
+
+.web-overlay::before,
+.web-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
     repeating-conic-gradient(
-      from 0deg at 50% 50%,
-      transparent 0deg 8deg,
-      var(--red) 8deg 9deg
+      from 0deg at 15% 20%,
+      transparent 0deg 11deg,
+      rgba(229, 25, 55, 0.1) 11deg 12deg
+    ),
+    repeating-radial-gradient(
+      circle at 15% 20%,
+      transparent 0,
+      transparent 32px,
+      rgba(229, 25, 55, 0.08) 33px,
+      transparent 34px
     );
-  background-size: 100px 100px;
+}
+
+.web-overlay::after {
+  background:
+    repeating-conic-gradient(
+      from 0deg at 85% 75%,
+      transparent 0deg 11deg,
+      rgba(30, 111, 217, 0.12) 11deg 12deg
+    ),
+    repeating-radial-gradient(
+      circle at 85% 75%,
+      transparent 0,
+      transparent 36px,
+      rgba(30, 111, 217, 0.09) 37px,
+      transparent 38px
+    );
 }
 
 /* Navigation — comic banner strip */
@@ -88,13 +132,14 @@ body {
 }
 
 .nav-logo {
-  font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--white);
+  font-family: var(--font-comic);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--yellow);
   text-decoration: none;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
+  text-shadow: 2px 2px 0 var(--ink);
 }
 
 .nav-links {
@@ -104,10 +149,12 @@ body {
 }
 
 .nav-links a {
+  font-family: var(--font-comic);
   color: var(--white);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   transition: background 0.2s, transform 0.2s;
@@ -158,9 +205,33 @@ body {
   inset: 0;
   background:
     radial-gradient(ellipse 90% 70% at 50% 100%, var(--sky) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(255, 214, 10, 0.35) 0%, transparent 50%),
     linear-gradient(180deg, var(--sky-light) 0%, var(--paper) 55%, var(--paper-warm) 100%);
+  z-index: -2;
+}
+
+/* Hero spider-web radiating from top center */
+.hero-web {
+  position: absolute;
+  inset: -20%;
   z-index: -1;
+  pointer-events: none;
+  background:
+    repeating-conic-gradient(
+      from 0deg at 50% 28%,
+      transparent 0deg 7.5deg,
+      rgba(30, 111, 217, 0.22) 7.5deg 8deg
+    ),
+    repeating-radial-gradient(
+      circle at 50% 28%,
+      transparent 0,
+      transparent 42px,
+      rgba(30, 111, 217, 0.16) 43px,
+      transparent 44px,
+      transparent 84px,
+      rgba(229, 25, 55, 0.1) 85px,
+      transparent 86px
+    );
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, black 20%, transparent 72%);
 }
 
 .hero-content {
@@ -171,7 +242,7 @@ body {
 }
 
 .hero-name {
-  font-family: var(--font-heading);
+  font-family: var(--font-hero);
   font-size: clamp(2.75rem, 9vw, 4.5rem);
   font-weight: 800;
   line-height: 1.1;
@@ -181,18 +252,19 @@ body {
 }
 
 .hero-title {
-  font-family: var(--font-body);
-  font-size: clamp(1.15rem, 3vw, 1.5rem);
-  font-weight: 500;
+  font-family: var(--font-comic);
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+  font-weight: 400;
   color: var(--red);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.06em;
   margin-bottom: 0.5rem;
 }
 
 .hero-meta {
+  font-family: var(--font-body);
   color: var(--text-muted);
-  font-size: 1.05rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 700;
   margin-bottom: 2rem;
 }
 
@@ -206,10 +278,10 @@ body {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
   text-decoration: none;
   border: 2px solid var(--ink);
   border-radius: 8px;
@@ -267,7 +339,7 @@ body {
 }
 
 .section-title {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: clamp(2.25rem, 6vw, 3.25rem);
   color: var(--ink);
   margin-bottom: 2rem;
@@ -328,7 +400,7 @@ body {
 
 .highlight-label {
   display: block;
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 1rem;
   letter-spacing: 0.08em;
   color: var(--red);
@@ -374,7 +446,7 @@ body {
 }
 
 .edu-header h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 1.75rem;
   color: var(--blue);
   letter-spacing: 0.03em;
@@ -397,7 +469,7 @@ body {
 }
 
 .edu-coursework-label {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 1.1rem;
   letter-spacing: 0.06em;
   color: var(--red);
@@ -444,7 +516,7 @@ body {
 }
 
 .skill-group h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 1.25rem;
   color: var(--red);
   margin-bottom: 0.75rem;
@@ -491,7 +563,7 @@ body {
   right: 1rem;
   background: var(--yellow);
   color: var(--ink);
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 0.95rem;
   letter-spacing: 0.08em;
   padding: 0.2rem 0.75rem;
@@ -519,7 +591,7 @@ body {
 }
 
 .project-header h3 {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 1.35rem;
   color: var(--blue);
   letter-spacing: 0.02em;
@@ -565,7 +637,7 @@ body {
 }
 
 .project-links a {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   color: var(--red);
   font-size: 1.05rem;
   letter-spacing: 0.04em;
@@ -619,7 +691,7 @@ body {
 }
 
 .contact-label {
-  font-family: var(--font-heading);
+  font-family: var(--font-comic);
   font-size: 1rem;
   letter-spacing: 0.06em;
   color: var(--red);
