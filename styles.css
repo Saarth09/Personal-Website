@@ -406,6 +406,10 @@ body {
   line-height: 1.4;
 }
 
+.panel-skill .tag-list {
+  margin-top: 0.35rem;
+}
+
 .cover-facts li {
   font-size: clamp(0.76rem, 1vw, 0.86rem);
 }
