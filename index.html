@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=11" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -67,7 +67,7 @@
               <h3 class="panel-title">At a Glance</h3>
               <ul class="cover-facts">
                 <li><span class="fact-label">Now</span> Software Developer @ ASUCD IRL — live campus data platform</li>
-                <li><span class="fact-label">Build</span> Omnitrix — solo, active dev, on-device AI assistant</li>
+                <li><span class="fact-label">Build</span> Beyond Art — UE5 draw-to-play sandbox (in dev) · Omnitrix — on-device AI</li>
                 <li><span class="fact-label">Shipped</span> Spotify clone · Pokémon GO analyst · GDSC Housing · Mini-Golf engine</li>
                 <li><span class="fact-label">Stack</span> React · TypeScript · Python · PostgreSQL · OpenCV · Ollama</li>
                 <li><span class="fact-label">Seeking</span> Summer internships · research collabs · full-stack / data / AI roles</li>
@@ -81,6 +81,10 @@
               <div class="mini-panel mini-panel-live">
                 <span class="label">Live!</span>
                 <span>Aggies on the Move — production portal, 9+ partners, research-grade analytics</span>
+              </div>
+              <div class="mini-panel mini-panel-game">
+                <span class="label">Soon</span>
+                <span>Beyond Art — draw-to-manifest UE5 sandbox; detail → stats; AI + vision scoring in dev</span>
               </div>
               <div class="mini-panel mini-panel-ai">
                 <span class="label">Flagship</span>
@@ -254,8 +258,85 @@
         </div>
       </article>
 
-      <!-- SPREAD 3: Omnitrix -->
-      <article class="comic-spread spread-double" data-spread="3" aria-label="Omnitrix project">
+      <!-- SPREAD 3: Beyond Art -->
+      <article class="comic-spread spread-double" data-spread="3" aria-label="Beyond Art project">
+        <div class="comic-page page-left">
+          <div class="panel-layout layout-comic layout-beyond-l">
+            <div class="panel panel-hero panel-hero-game">
+              <span class="stamp stamp-soon">Coming Soon!</span>
+              <h2 class="project-title">Beyond Art</h2>
+              <p class="project-role">AI-Powered Sandbox Game · Personal Project</p>
+              <p class="project-date">May 2026 – Present · In development</p>
+            </div>
+            <div class="panel panel-accent">
+              <p class="impact-line">Draw-to-manifest sandbox · UE5 · “The better you draw, the better it works”</p>
+            </div>
+            <div class="panel panel-body panel-beyond-core">
+              <h3>Draw-to-Manifest</h3>
+              <p>Sketch weapons, body parts, tools, and structures — they become playable objects. Want to crack a building? Draw your weapon or boxing gloves. Want to run faster or hit harder? Draw your body and legs. Detail maps to stats: durability, strength, speed, damage, defense.</p>
+              <ul class="bullet-list bullet-tight">
+                <li><strong>Creative expression</strong> — invent solutions like Scribblenauts, not a fixed item shop</li>
+                <li><strong>Skill expression</strong> — better art = better gear, like crafting quality in survival games</li>
+                <li><strong>Emergent gameplay</strong> — players solve problems their way, not yours</li>
+                <li>Built in phases: in-game drawing → sketch to object → stat scoring → AI judging</li>
+              </ul>
+            </div>
+            <div class="panel panel-body panel-beyond-ml">
+              <h3>What AI Handles Well</h3>
+              <p>Vision models classify category and rough quality; classic image metrics keep scores fair and repeatable.</p>
+              <ul class="bullet-list bullet-tight">
+                <li><strong>Category detection</strong> — sword, glove, leg, shield, gun, structure, and more</li>
+                <li><strong>Quality tiers</strong> — stick figure vs. detailed sketch → Common / Rare / Epic bands</li>
+                <li><strong>Semantic bonuses</strong> — spikes, armor plates, motion lines → extra traits</li>
+              </ul>
+            </div>
+            <div class="panel panel-body panel-beyond-types">
+              <h3>Recognized Objects</h3>
+              <ul class="tag-list tag-list-tight beyond-object-tags">
+                <li>Swords</li><li>Guns</li><li>Bazookas</li><li>Bows</li>
+                <li>Gloves</li><li>Shields</li><li>Armor</li><li>Helmets</li>
+                <li>Legs</li><li>Boots</li><li>Tools</li><li>Hammers</li>
+                <li>Structures</li><li>Potions</li><li>Traps</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="comic-spine" aria-hidden="true"></div>
+        <div class="comic-page page-right">
+          <div class="panel-layout layout-comic layout-beyond-r">
+            <div class="panel panel-body panel-beyond-scoring">
+              <h3>Hybrid Scoring Pipeline</h3>
+              <p class="flow-line">Draw in UE5 → export PNG → deterministic metrics → AI semantic pass → clamp → spawn object</p>
+              <ul class="bullet-list bullet-tight">
+                <li>Fast local metrics (line count, fill ratio, symmetry) set a fair baseline</li>
+                <li>AI adds traits & quality modifiers — structured output, fixed stat formulas</li>
+                <li>Floor & ceiling: every drawing works; masterpieces cap so balance holds</li>
+                <li>Designing for forge-screen latency, not real-time combat drawing</li>
+              </ul>
+            </div>
+            <div class="panel panel-body panel-beyond-stats">
+              <h3>Design Challenges</h3>
+              <div class="stat-block"><span class="stat-num">Fair</span><span class="stat-label">Non-artists still play</span></div>
+              <div class="stat-block"><span class="stat-num">Stable</span><span class="stat-label">Same sketch, same tier</span></div>
+              <div class="stat-block"><span class="stat-num">Safe</span><span class="stat-label">Anti-exploit guards</span></div>
+              <p class="panel-foot">Templates, stamps, and “enhance my sketch” for accessibility; blank-canvas & photo detection; rate limits on complexity spam.</p>
+            </div>
+            <div class="panel panel-quote">
+              <p>“The better you draw, the better it works — clear, memorable, and the whole hook of the sandbox.”</p>
+            </div>
+            <div class="panel panel-coming-soon" aria-label="Project status">
+              <p class="coming-soon-label">Coming Soon</p>
+              <p class="coming-soon-text">Proving the loop first: draw → object → stats from simple rules. Then layering vision judging, mesh pipeline, and balance tuning. Demo & devlog on the way.</p>
+            </div>
+            <div class="panel panel-tags">
+              <ul class="tag-list"><li>Unreal Engine 5</li><li>Machine Learning</li><li>Computer Vision</li><li>Procedural Mesh</li><li>Game Design</li><li>C++</li></ul>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SPREAD 4: Omnitrix -->
+      <article class="comic-spread spread-double" data-spread="4" aria-label="Omnitrix project">
         <div class="comic-page page-left">
           <div class="panel-layout layout-comic layout-omni-l">
             <div class="panel panel-hero panel-hero-ai">
@@ -348,8 +429,8 @@
         </div>
       </article>
 
-      <!-- SPREAD 4: Spotify + Pokémon GO -->
-      <article class="comic-spread spread-double" data-spread="4" aria-label="Spotify and Pokémon projects">
+      <!-- SPREAD 5: Spotify + Pokémon GO -->
+      <article class="comic-spread spread-double" data-spread="5" aria-label="Spotify and Pokémon projects">
         <div class="comic-page page-left">
           <div class="panel-layout layout-comic layout-duo-spotify">
             <div class="panel panel-hero panel-hero-compact">
@@ -429,8 +510,8 @@
         </div>
       </article>
 
-      <!-- SPREAD 5: GDSC Housing + Mini-Golf -->
-      <article class="comic-spread spread-double" data-spread="5" aria-label="GDSC and Mini-Golf projects">
+      <!-- SPREAD 6: GDSC Housing + Mini-Golf -->
+      <article class="comic-spread spread-double" data-spread="6" aria-label="GDSC and Mini-Golf projects">
         <div class="comic-page page-left">
           <div class="panel-layout layout-comic layout-duo-housing">
             <div class="panel panel-hero panel-hero-compact panel-hero-campus">
@@ -510,8 +591,8 @@
         </div>
       </article>
 
-      <!-- SPREAD 6: Back cover -->
-      <article class="comic-spread spread-back" data-spread="6" aria-label="Back cover contact">
+      <!-- SPREAD 7: Back cover -->
+      <article class="comic-spread spread-back" data-spread="7" aria-label="Back cover contact">
         <div class="comic-page page-back">
           <div class="cover-border cover-border-back">
             <p class="issue-tag">The End?</p>
@@ -547,10 +628,10 @@
     </div>
 
     <div class="comic-chrome-bottom">
-      <p class="spread-progress" id="spreadProgress" aria-live="polite">Spread 1 of 7 · Cover</p>
+      <p class="spread-progress" id="spreadProgress" aria-live="polite">Spread 1 of 8 · Cover</p>
     </div>
   </div>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>

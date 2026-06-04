@@ -2,6 +2,7 @@ const SPREAD_LABELS = [
   "Cover",
   "Skills",
   "ASUCD",
+  "Beyond Art",
   "Omnitrix",
   "Builds",
   "Campus",
