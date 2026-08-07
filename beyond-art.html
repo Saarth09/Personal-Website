@@ -7,33 +7,30 @@
   <title>Beyond Art · Saarth Kishore</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body class="case-page">
-  <div class="stage-vignette" aria-hidden="true"></div>
-  <div class="halftone-bg" aria-hidden="true"></div>
-
   <header class="case-top">
     <a class="case-back" href="index.html">← Portfolio</a>
     <span class="case-brand">Saarth Kishore</span>
-    <a class="case-play" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Play on itch.io →</a>
+    <a class="case-play" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Play on itch.io</a>
   </header>
 
   <main class="case-main">
-    <section class="case-hero panel">
-      <span class="stamp stamp-live">Live on itch!</span>
-      <p class="case-kicker">Case Study · Personal Project · May 2026 – Present</p>
+    <section class="case-hero">
+      <span class="stamp stamp-live">Live on itch</span>
+      <p class="case-kicker">Case study · Personal project · May 2026 – Present</p>
       <h1 class="case-title">Beyond Art</h1>
       <p class="case-tagline">Draw-to-manifest sandbox in Unreal Engine 5 — <em>the better you draw, the better it works.</em></p>
       <p class="case-lede">
         Beyond Art is a third-person creative sandbox where player sketches become playable weapons,
         ranged gear, and body customizations. A hybrid <strong>vision + ink-metrics judge</strong>
-        validates drawings and scores stats. The game ships to players on itch.io while the judge
-        runs as a separate cloud service — so gameplay builds and AI logic update independently.
+        validates drawings and scores stats. The game ships on itch.io while the judge runs as a
+        separate cloud service — so gameplay builds and AI logic update independently.
       </p>
-      <ul class="tag-list case-tags">
+      <ul class="tags case-tags">
         <li>Unreal Engine 5.8</li>
         <li>Blueprints</li>
         <li>Python</li>
@@ -46,11 +43,11 @@
       <div class="case-cta-row">
         <a class="case-btn case-btn-primary" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Download / Play</a>
         <a class="case-btn" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="case-btn" href="index.html">Back to comic portfolio</a>
+        <a class="case-btn" href="index.html">Back to portfolio</a>
       </div>
     </section>
 
-    <nav class="case-toc panel" aria-label="On this page">
+    <nav class="case-toc" aria-label="On this page">
       <h2 class="case-h2">On this page</h2>
       <ol class="case-toc-list">
         <li><a href="#hook">The hook</a></li>
@@ -66,16 +63,14 @@
       </ol>
     </nav>
 
-    <section id="hook" class="case-section panel">
+    <section id="hook" class="case-section">
       <h2 class="case-h2">The hook</h2>
       <p>
         Most sandboxes give you a menu of items. Beyond Art gives you a <strong>blank canvas</strong>.
         Want to smash a building? Draw a sword, axe, or boxing gloves. Want to run faster?
         Draw legs. Want a ranged loadout? Draw a pistol, rifle, or bow — then draw the projectile art.
       </p>
-      <p>
-        Three ideas stacked into one fantasy:
-      </p>
+      <p>Three ideas stacked into one fantasy:</p>
       <ul class="bullet-list">
         <li><strong>Creative expression</strong> — invent solutions like Scribblenauts, not a fixed shop.</li>
         <li><strong>Skill expression</strong> — better, clearer drawings map to stronger stats (crafting-quality fantasy).</li>
@@ -84,7 +79,7 @@
       <p class="panel-quote-inline">“The better you draw, the better it works” — the entire product promise in one sentence.</p>
     </section>
 
-    <section id="loop" class="case-section panel">
+    <section id="loop" class="case-section">
       <h2 class="case-h2">Player loop</h2>
       <ol class="case-steps">
         <li><strong>Explore</strong> a stylized third-person city sandbox (low-poly / modular plaza).</li>
@@ -100,7 +95,7 @@
       </p>
     </section>
 
-    <section id="systems" class="case-section panel">
+    <section id="systems" class="case-section">
       <h2 class="case-h2">Gameplay systems shipped</h2>
       <div class="case-grid-2">
         <div>
@@ -124,14 +119,14 @@
         </div>
       </div>
       <h3 class="case-h3">Recognized / scored subjects</h3>
-      <ul class="tag-list">
+      <ul class="tags">
         <li>Sword</li><li>Axe</li><li>Spear</li><li>Dagger</li>
         <li>Pistol</li><li>Rifle</li><li>Bow</li><li>Bazooka</li>
         <li>Legs</li><li>Arms</li><li>Generic weapon</li>
       </ul>
     </section>
 
-    <section id="judge" class="case-section panel">
+    <section id="judge" class="case-section">
       <h2 class="case-h2">AI judge architecture</h2>
       <p>
         The game never embeds API keys. Unreal talks only to a small Python service —
@@ -157,7 +152,7 @@
       </ul>
     </section>
 
-    <section id="pipeline" class="case-section panel">
+    <section id="pipeline" class="case-section">
       <h2 class="case-h2">Validate → score pipeline</h2>
       <p>Confirm runs <strong>two async HTTP calls</strong> (not one giant request):</p>
       <div class="case-grid-2">
@@ -196,8 +191,8 @@
       </p>
     </section>
 
-    <section id="modeb" class="case-section panel">
-      <h2 class="case-h2">Mode B — cloud deploy (how other people play)</h2>
+    <section id="modeb" class="case-section">
+      <h2 class="case-h2">Mode B — cloud deploy</h2>
       <p>
         Local Mode A sent a disk <code>image_path</code> to a Python process on the same PC.
         Packaged builds can’t do that for strangers. Mode B:
@@ -225,19 +220,19 @@
       </p>
     </section>
 
-    <section id="ue" class="case-section panel">
+    <section id="ue" class="case-section">
       <h2 class="case-h2">Unreal engineering notes</h2>
       <ul class="bullet-list">
-        <li><strong>Async HTTP in Blueprints</strong> — <code>Http Request</code> + bind <code>On Request Complete</code>; orchestration via custom events (<code>OnJudgeValidateRequested</code>, score, ping).</li>
+        <li><strong>Async HTTP in Blueprints</strong> — <code>Http Request</code> + bind <code>On Request Complete</code>; orchestration via custom events.</li>
         <li><strong>JSON</strong> — Json Blueprint Utilities; string bools (<code>"true"</code>/<code>"false"</code>) for reliable field reads.</li>
         <li><strong>Long timeouts</strong> — <code>DefaultEngine.ini</code> <code>[HTTP]</code> activity timeouts raised to 180s for cold starts + vision latency.</li>
-        <li><strong>Plugins</strong> — HttpBlueprint, JsonBlueprintUtilities, BlueprintFileUtils, FileSDK, Low Entry Extended Standard Library (Bytes → Base64).</li>
+        <li><strong>Plugins</strong> — HttpBlueprint, JsonBlueprintUtilities, BlueprintFileUtils, FileSDK, Low Entry Extended Standard Library.</li>
         <li><strong>Contexts</strong> — <code>weapon</code> / <code>ranged</code> / <code>body_legs</code> / <code>body_arms</code> route finish/fallback equip functions.</li>
-        <li><strong>PNG alpha trap</strong> — UE export often writes alpha=0 (looks blank in Photos); bridge flattens RGB and writes visible previews for debugging.</li>
+        <li><strong>PNG alpha trap</strong> — UE export often writes alpha=0; bridge flattens RGB for visible debug previews.</li>
       </ul>
     </section>
 
-    <section id="hard" class="case-section panel">
+    <section id="hard" class="case-section">
       <h2 class="case-h2">Hard problems solved</h2>
       <div class="case-challenge">
         <h3 class="case-h3">False “not a weapon” rejects</h3>
@@ -261,7 +256,7 @@
       </div>
     </section>
 
-    <section id="ship" class="case-section panel">
+    <section id="ship" class="case-section">
       <h2 class="case-h2">Shipping &amp; update model</h2>
       <table class="case-table">
         <thead>
@@ -274,31 +269,31 @@
         </tbody>
       </table>
       <p>
-        Live download: <a class="comic-link" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">saarth09.itch.io/beyondart</a>.
-        Steam is feasible later with the same Shipping build + Steamworks; Mode B judge stays on Render.
+        Live download:
+        <a class="text-link" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">saarth09.itch.io/beyondart</a>.
+        Steam is feasible later with the same Shipping build; Mode B judge stays on Render.
       </p>
     </section>
 
-    <section id="stack" class="case-section panel">
+    <section id="stack" class="case-section">
       <h2 class="case-h2">Stack &amp; what I owned</h2>
       <p>
         Solo project end-to-end: design, UE gameplay/UI, Python judge service, cloud deploy,
         packaging, and distribution.
       </p>
-      <ul class="tag-list">
+      <ul class="tags">
         <li>Unreal Engine 5.8</li>
         <li>Blueprints</li>
-        <li>C++ plugins (FileSDK, Low Entry)</li>
+        <li>C++ plugins</li>
         <li>Python 3</li>
         <li>Pillow</li>
         <li>Gemini Flash</li>
         <li>Ollama / moondream</li>
         <li>Docker</li>
         <li>Render</li>
-        <li>GitHub</li>
         <li>itch.io / butler</li>
         <li>HTTP JSON APIs</li>
-        <li>Computer vision heuristics</li>
+        <li>Computer vision</li>
         <li>Prompt engineering</li>
       </ul>
       <h3 class="case-h3">Status</h3>
@@ -309,7 +304,7 @@
       </p>
     </section>
 
-    <section class="case-section panel case-footer-panel">
+    <section class="case-section case-footer-panel">
       <p class="case-footer-line">Beyond Art · Saarth Kishore · UC Davis Computer Engineering</p>
       <div class="case-cta-row">
         <a class="case-btn case-btn-primary" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Play Beyond Art</a>

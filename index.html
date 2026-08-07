@@ -3,737 +3,422 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM drift monitoring (Tone), on-device AI (Omnitrix), full-stack systems, computer vision, and local LLM engineering." />
+  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM drift monitoring (Tone), on-device AI (Omnitrix), full-stack systems, and computer vision." />
   <title>Saarth Kishore | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=14" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
-  <div class="stage-vignette" aria-hidden="true"></div>
-  <div class="halftone-bg" aria-hidden="true"></div>
-  <div class="web-overlay" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="comic-stage" id="comicStage">
-    <nav class="comic-chrome-top" id="comicChromeTop" aria-label="Site navigation">
-      <button type="button" class="chrome-brand" id="chromeBrand" aria-label="Saarth Kishore — go to cover">
-        Saarth Kishore
+  <header class="site-header" id="siteHeader">
+    <div class="shell header-inner">
+      <a class="brand" href="#top">Saarth Kishore</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Menu">
+        <span></span><span></span>
       </button>
-      <div class="spread-tabs" id="spreadTabs"></div>
-    </nav>
-
-    <div class="comic-scroll" id="comicScroll" aria-live="polite" tabindex="-1">
-
-      <!-- SPREAD 0: Front cover -->
-      <article class="comic-spread spread-cover" data-spread="0" aria-label="Front cover">
-        <div class="comic-page page-cover">
-          <div class="cover-border layout-cover">
-            <div class="panel panel-hero-cover">
-              <span class="cover-stamp">Portfolio · 2026</span>
-              <p class="issue-tag">Issue #1 · Origin Story</p>
-              <h1 class="cover-title">Saarth Kishore</h1>
-              <p class="cover-subtitle">Software Engineer</p>
-              <p class="cover-meta">UC Davis · Computer Engineering · Class of 2027</p>
-              <p class="cover-tagline">Production data systems · LLM observability · On-device AI · Full-stack product engineering</p>
-            </div>
-
-            <div class="panel panel-about-cover">
-              <h2 class="panel-title">About Me</h2>
-              <p>
-                I’m a <strong>Computer Engineering</strong> student at UC Davis (Class of 2027, Mathematics minor)
-                who builds software that ships — not slide decks. My work spans campus-scale data platforms,
-                computer vision pipelines, and a personal AI stack that never phones home to the cloud.
-              </p>
-              <p>
-                At <strong>ASUCD Innovation & Research Lab</strong> I develop production systems for
-                <strong>Aggies on the Move</strong>, unifying mobility feeds from <strong>9+ campus partners</strong>
-                into PostgreSQL warehouses and React dashboards used by researchers and transportation staff daily.
-              </p>
-              <p>
-                I also ship AI products end-to-end: <strong>Tone</strong> continuously monitors deployed LLMs for
-                behavioral drift (embedding-space MMD, token KL, persona cosine), and <strong>Omnitrix</strong> is an
-                always-on desktop assistant — screen-aware context, local Ollama reasoning, and vector memory —
-                engineered for privacy, speed, and workflows that feel invisible until you need them.
-              </p>
-              <p>
-                Whether I’m designing schemas, tuning ETL jobs, shipping React UIs, or prototyping CV/LLM features,
-                I own problems end-to-end. I’m looking for teams that care about <strong>impact</strong>, not just
-                lines of code — internships, research labs, and ambitious product builds welcome.
-              </p>
-            </div>
-
-            <aside class="panel panel-cover-rail">
-              <h3 class="panel-title">At a Glance</h3>
-              <ul class="cover-facts">
-                <li><span class="fact-label">Now</span> Software Developer @ ASUCD IRL — live campus data platform</li>
-                <li><span class="fact-label">Build</span> Tone — LLM drift detector (live) · Beyond Art — UE5 sandbox on itch · Omnitrix — on-device AI</li>
-                <li><span class="fact-label">Shipped</span> Spotify clone · Pokémon GO analyst · GDSC Housing · Mini-Golf engine</li>
-                <li><span class="fact-label">Stack</span> React · TypeScript · Python · FastAPI · PostgreSQL · ChromaDB · Ollama</li>
-                <li><span class="fact-label">Seeking</span> Summer internships · research collabs · full-stack / data / AI roles</li>
-              </ul>
-              <ul class="tag-list tag-list-tight cover-chips">
-                <li>React</li><li>Python</li><li>PostgreSQL</li><li>ETL</li><li>OpenCV</li><li>Ollama</li><li>Firebase</li>
-              </ul>
-            </aside>
-
-            <div class="panel panel-highlights cover-highlights">
-              <div class="mini-panel mini-panel-live">
-                <span class="label">Live!</span>
-                <span>Aggies on the Move — production portal, 9+ partners, research-grade analytics</span>
-              </div>
-              <div class="mini-panel mini-panel-game">
-                <span class="label">Live!</span>
-                <span>Beyond Art — draw-to-manifest UE5 sandbox on itch.io; hybrid vision + ink judge</span>
-              </div>
-              <div class="mini-panel mini-panel-ai">
-                <span class="label">Live!</span>
-                <span>Tone — behavioral drift detector for LLMs · MMD / KL / cosine · tonehq.xyz</span>
-              </div>
-              <div class="mini-panel mini-panel-ship">
-                <span class="label">Flagship</span>
-                <span>Omnitrix — on-device AI · Voice-ID Spotify · 3s Pokémon rankings · 60 FPS physics</span>
-              </div>
-            </div>
-
-            <button type="button" class="open-comic-btn" id="openComicBtn">
-              Open Comic →
-            </button>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 1: Skills + Education -->
-      <article class="comic-spread spread-double" data-spread="1" aria-label="Skills and education">
-        <div class="comic-page page-left">
-          <header class="spread-header">
-            <h2 class="spread-title">Education</h2>
-          </header>
-          <div class="panel-layout layout-edu layout-fill">
-            <div class="panel panel-edu-main">
-              <h3>UC Davis</h3>
-              <p class="edu-line">B.S. Computer Engineering</p>
-              <p class="edu-line">Minor in Mathematics</p>
-              <p class="edu-line">Expected graduation June 2027</p>
-              <p class="edu-blurb">
-                Rigorous training in systems, algorithms, computer architecture, and hardware design —
-                paired with hands-on software engineering through lab work, personal projects, and a production
-                role at ASUCD IRL.
-              </p>
-              <ul class="bullet-list bullet-tight">
-                <li>Applies theory to real pipelines: databases, APIs, ML, and embedded thinking</li>
-                <li>Math minor: stronger foundations in proofs, modeling, and algorithm analysis</li>
-                <li>Balances coursework with shipping software used outside the classroom</li>
-              </ul>
-              <span class="badge">Class of 2027</span>
-            </div>
-            <div class="panel panel-coursework">
-              <h3>Core Coursework</h3>
-              <p class="edu-blurb">
-                From data structures and computer architecture to circuits and partial differential equations —
-                coursework that directly supports the systems I build in research and industry-style projects.
-              </p>
-              <ul class="bullet-list bullet-tight">
-                <li>DSA, Algorithms, OOP — complexity & clean abstractions</li>
-                <li>Computer Architecture & Networks — how software meets hardware</li>
-                <li>Circuits I & II — low-level intuition for performance work</li>
-                <li>PDEs & Abstract Math — modeling for ML and analytics</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <header class="spread-header">
-            <h2 class="spread-title">Technical Skills</h2>
-          </header>
-          <div class="panel-layout layout-skills layout-fill">
-            <div class="panel panel-skill">
-              <h3>Languages</h3>
-              <p class="skill-blurb">From systems-level C/C++ to application stacks — Python and TypeScript for production, Java for OOP backends, plus modern web with Node.js and Next.js.</p>
-              <ul class="tag-list tag-list-tight"><li>C</li><li>C++</li><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>Node.js</li><li>Next.js</li><li>JSON</li></ul>
-            </div>
-            <div class="panel panel-skill">
-              <h3>Frontend</h3>
-              <p class="skill-blurb">React dashboards, rapid prototyping, and modern web UIs — campus analytics portals, consumer apps, and data-dense interfaces with HTML/CSS fundamentals.</p>
-              <ul class="tag-list tag-list-tight"><li>React</li><li>HTML</li><li>CSS</li><li>Dashboards</li><li>Rapid Prototyping</li><li>Web Apps</li><li>Web Audio</li></ul>
-            </div>
-            <div class="panel panel-skill">
-              <h3>Backend & APIs</h3>
-              <p class="skill-blurb">System design, REST APIs, PostgreSQL warehouses, ETL pipelines, integration testing with pytest, debugging production issues, plus CI/CD and cloud deployment basics.</p>
-              <ul class="tag-list tag-list-tight"><li>REST APIs</li><li>PostgreSQL</li><li>SQL</li><li>Databases</li><li>ETL</li><li>Pytest</li><li>Integration Testing</li><li>Debugging</li><li>System Design</li><li>MongoDB</li><li>CI/CD</li><li>Cloud</li><li>Git</li></ul>
-            </div>
-            <div class="panel panel-skill">
-              <h3>Data & AI</h3>
-              <p class="skill-blurb">Machine learning, computer vision, OCR, and data pipelines — local LLM deployment, RAG, embeddings, vector stores, prompt engineering, and analytics with NumPy/Pandas.</p>
-              <ul class="tag-list tag-list-tight"><li>Machine Learning</li><li>Computer Vision</li><li>OCR</li><li>Image Processing</li><li>Object Detection</li><li>Feature Extraction</li><li>Model Inference</li><li>LLMs</li><li>Prompt Engineering</li><li>RAG</li><li>Embeddings</li><li>ChromaDB</li><li>Ollama</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li><li>Data Pipelines</li><li>Data Analytics</li></ul>
-            </div>
-            <div class="panel panel-skill panel-wide panel-skill-game">
-              <h3>Game Development</h3>
-              <p class="skill-blurb">Unreal Engine 5 sandbox design (Beyond Art), gameplay systems, physics-based mechanics, procedural object generation, and Pygame prototypes for physics sandboxes — plus Git-backed iteration on game projects.</p>
-              <ul class="tag-list tag-list-tight"><li>Unreal Engine 5</li><li>Sandbox Design</li><li>Gameplay Systems</li><li>Physics Gameplay</li><li>Procedural Generation</li><li>Pygame</li><li>Blueprints</li><li>C++</li><li>Git</li></ul>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 2: ASUCD IRL -->
-      <article class="comic-spread spread-double" data-spread="2" aria-label="ASUCD project">
-        <div class="comic-page page-left">
-          <div class="panel-layout layout-comic layout-asucd-l">
-            <div class="panel panel-hero panel-hero-live">
-              <span class="stamp stamp-live">Live!</span>
-              <h2 class="project-title">ASUCD IRL</h2>
-              <p class="project-role">Software Developer · ASUCD Innovation & Research Lab</p>
-              <p class="project-date">Dec 2025 – Present</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">Campus-wide · 9+ partners · Production portal</p>
-            </div>
-            <div class="panel panel-body panel-story">
-              <h3>The Mission</h3>
-              <p><strong>Aggies on the Move</strong> is the campus mobility intelligence hub — unifying Unitrans, DOTS, parking, permits, and ridership feeds into one normalized PostgreSQL warehouse so researchers and staff can answer real questions about how Aggies move.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Single source of truth across heterogeneous partner APIs & file drops</li>
-                <li>Scheduled ingestion with validation — bad data never silently lands</li>
-                <li>Public portal + internal dashboards for IRL & campus stakeholders</li>
-                <li>Built for analytical queries, not just pretty charts</li>
-              </ul>
-            </div>
-            <div class="panel panel-stats">
-              <div class="stat-block"><span class="stat-num">9+</span><span class="stat-label">Data partners</span></div>
-              <div class="stat-block"><span class="stat-num">3</span><span class="stat-label">Core feed types</span></div>
-              <div class="stat-block"><span class="stat-num">∞</span><span class="stat-label">Query-ready rows</span></div>
-            </div>
-            <div class="panel panel-body panel-partners">
-              <h3>Partner Ecosystem</h3>
-              <p class="panel-caption">Each partner ships different formats — we normalize to one schema:</p>
-              <ul class="tag-list tag-list-tight"><li>Unitrans</li><li>DOTS</li><li>Parking</li><li>Permits</li><li>Ridership</li><li>+ more</li></ul>
-              <p class="panel-foot">Each partner has unique schemas — we document contracts, map fields, and monitor pipeline health so researchers trust the numbers.</p>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <div class="panel-layout layout-comic layout-asucd-r">
-            <div class="panel panel-body panel-impact">
-              <h3>Engineering Impact</h3>
-              <ul class="bullet-list bullet-tight">
-                <li>React dashboards: ridership trends, parking occupancy, permit analytics</li>
-                <li>ETL pipelines with schema validation, retries, and alerting on failure</li>
-                <li>PostgreSQL indexes & query patterns tuned for researcher workloads</li>
-                <li>Ingestion playbooks so new partners onboard without breaking existing feeds</li>
-                <li>Production deployment used by campus staff — not a class prototype</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-stack">
-              <h3>My Role</h3>
-              <ul class="bullet-list bullet-tight">
-                <li>Design warehouse schemas & write migrations as requirements evolve</li>
-                <li>Build and maintain ETL jobs across 9+ partner data formats</li>
-                <li>Ship dashboard features for non-technical transportation staff</li>
-                <li>Coordinate with partners on field mappings and data-quality SLAs</li>
-                <li>Debug production issues when feeds drift or APIs change</li>
-              </ul>
-            </div>
-            <div class="panel panel-quote">
-              <p>“One platform where campus mobility data finally talks to itself — built for people who make policy and publish research.”</p>
-            </div>
-            <div class="panel panel-body panel-audience">
-              <h3>Who Uses It</h3>
-              <p>IRL researchers running longitudinal studies, DOTS and Unitrans staff tracking operations, and analysts comparing how transit and parking interact across quarters.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Year-over-year ridership & mode-shift analysis</li>
-                <li>Parking stress vs. class schedule correlation</li>
-                <li>Clean exports for papers, grants, and campus planning</li>
-              </ul>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>React</li><li>PostgreSQL</li><li>ETL</li><li>Data Pipelines</li><li>Analytics</li></ul>
-            </div>
-            <div class="panel panel-link-box">
-              <a href="https://aggiesonthemove.irl.ucdavis.edu/" class="comic-link" target="_blank" rel="noopener noreferrer">aggiesonthemove.irl.ucdavis.edu →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 3: Beyond Art -->
-      <article class="comic-spread spread-double" data-spread="3" aria-label="Beyond Art project">
-        <div class="comic-page page-left">
-          <div class="panel-layout layout-comic layout-beyond-l">
-            <div class="panel panel-hero panel-hero-game">
-              <span class="stamp stamp-live">Live on itch!</span>
-              <h2 class="project-title">Beyond Art</h2>
-              <p class="project-role">AI-Powered Sandbox Game · Personal Project</p>
-              <p class="project-date">May 2026 – Present · Playable Windows build</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">Draw-to-manifest sandbox · UE5 · “The better you draw, the better it works”</p>
-            </div>
-            <div class="panel panel-body panel-beyond-core">
-              <h3>Draw-to-Manifest</h3>
-              <p>Sketch weapons, body parts, tools, and structures — they become playable objects. Want to crack a building? Draw your weapon or boxing gloves. Want to run faster or hit harder? Draw your body and legs. Detail maps to stats: durability, strength, speed, damage, defense.</p>
-              <ul class="bullet-list bullet-tight">
-                <li><strong>Creative expression</strong> — invent solutions like Scribblenauts, not a fixed item shop</li>
-                <li><strong>Skill expression</strong> — better art = better gear, like crafting quality in survival games</li>
-                <li><strong>Emergent gameplay</strong> — players solve problems their way, not yours</li>
-                <li>Shipped loop: in-game drawing → PNG export → cloud validate/score → equip &amp; play</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-beyond-ml">
-              <h3>What AI Handles Well</h3>
-              <p>Vision models classify category and rough quality; classic image metrics keep scores fair and repeatable.</p>
-              <ul class="bullet-list bullet-tight">
-                <li><strong>Category detection</strong> — sword, glove, leg, shield, gun, structure, and more</li>
-                <li><strong>Quality tiers</strong> — stick figure vs. detailed sketch → Common / Rare / Epic bands</li>
-                <li><strong>Semantic bonuses</strong> — spikes, armor plates, motion lines → extra traits</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-beyond-types">
-              <h3>Recognized Objects</h3>
-              <ul class="tag-list tag-list-tight beyond-object-tags">
-                <li>Swords</li><li>Guns</li><li>Bazookas</li><li>Bows</li>
-                <li>Gloves</li><li>Shields</li><li>Armor</li><li>Helmets</li>
-                <li>Legs</li><li>Boots</li><li>Tools</li><li>Hammers</li>
-                <li>Structures</li><li>Potions</li><li>Traps</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <div class="panel-layout layout-comic layout-beyond-r">
-            <div class="panel panel-body panel-beyond-scoring">
-              <h3>Hybrid Scoring Pipeline</h3>
-              <p class="flow-line">Draw in UE5 → export PNG → Base64 HTTPS → Judge Bridge → validate → ink/AI score → clamp → equip</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Ink prefilter + Gemini vision validate; cloud fallback if Gemini is blocked</li>
-                <li>Hybrid scoring: fair ink metrics + semantic subject checks</li>
-                <li>Floor &amp; ceiling: every valid drawing works; stats clamped for balance</li>
-                <li>Mode B: game package on itch, judge on Render — update independently</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-beyond-stats">
-              <h3>Design Challenges</h3>
-              <div class="stat-block"><span class="stat-num">Fair</span><span class="stat-label">Non-artists still play</span></div>
-              <div class="stat-block"><span class="stat-num">Stable</span><span class="stat-label">Same sketch, same tier</span></div>
-              <div class="stat-block"><span class="stat-num">Safe</span><span class="stat-label">Anti-exploit guards</span></div>
-              <p class="panel-foot">Templates, stamps, and “enhance my sketch” for accessibility; blank-canvas & photo detection; rate limits on complexity spam.</p>
-            </div>
-            <div class="panel panel-quote">
-              <p>“The better you draw, the better it works — clear, memorable, and the whole hook of the sandbox.”</p>
-            </div>
-            <div class="panel panel-coming-soon panel-beyond-cta" aria-label="Play Beyond Art">
-              <p class="coming-soon-label">Playable now</p>
-              <p class="coming-soon-text">Draw → validate → score → equip. Melee, ranged, and body forges live with a cloud judge on Render.</p>
-              <p class="beyond-cta-links">
-                <a href="beyond-art.html" class="comic-link">Full case study →</a>
-                <a href="https://saarth09.itch.io/beyondart" class="comic-link" target="_blank" rel="noopener noreferrer">itch.io →</a>
-              </p>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>Unreal Engine 5</li><li>Machine Learning</li><li>Computer Vision</li><li>Python</li><li>Render</li><li>Game Design</li></ul>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 4: Omnitrix -->
-      <article class="comic-spread spread-double" data-spread="4" aria-label="Omnitrix project">
-        <div class="comic-page page-left">
-          <div class="panel-layout layout-comic layout-omni-l">
-            <div class="panel panel-hero panel-hero-ai">
-              <span class="stamp stamp-ai">AI</span>
-              <h2 class="project-title">Omnitrix</h2>
-              <p class="project-role">Flagship Side Project · Personal AI Assistant</p>
-              <p class="project-date">Mar 2026 – Present · Active development</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">On-device · Zero cloud · Always-on</p>
-            </div>
-            <div class="panel panel-body panel-pipeline">
-              <h3>Architecture</h3>
-              <p class="flow-line">Screen capture → OCR/CV → Ollama LLM → Mem0 + ChromaDB → Desktop overlay</p>
-              <p>Omnitrix is a loop: observe the screen, extract structured context, reason with a local model, persist what matters, and surface answers in a lightweight overlay — all without sending pixels to a third party.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Active-window capture — context without copy-paste</li>
-                <li>OCR/CV preprocessing before text hits the model</li>
-                <li>Streaming Ollama responses with tool-style prompts</li>
-                <li>Vector memory for habits, preferences, and prior sessions</li>
-                <li>Tray + hotkeys — summon help without leaving your flow</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-privacy">
-              <h3>Privacy First</h3>
-              <p>Cloud assistants train on your data; Omnitrix doesn’t leave your machine. Built for students, developers, and anyone who lives in IDEs and browsers all day.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>No OpenAI / Anthropic keys — Ollama runs locally</li>
-                <li>Screen data processed in-process, not uploaded</li>
-                <li>Embeddings & logs on disk you own and can wipe</li>
-                <li>Offline-capable once models are pulled</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-roadmap">
-              <h3>Build Log</h3>
-              <p class="panel-caption">Solo project · active dev since Mar 2026</p>
-              <ul class="bullet-list bullet-tight">
-                <li><strong>Shipped:</strong> capture loop, OCR pipeline, Ollama integration, system tray</li>
-                <li><strong>In progress:</strong> overlay polish, Mem0/Chroma tuning, prompt library</li>
-                <li><strong>Next:</strong> per-app profiles, model hot-swap, plugin hooks</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <div class="panel-layout layout-comic layout-omni-r">
-            <div class="panel panel-body panel-big">
-              <h3>Perception</h3>
-              <p>Captures what’s on screen and turns pixels into structured context the model can reason about — titles, UI text, and region-aware OCR.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Configurable crop regions per workflow</li>
-                <li>OpenCV denoise, threshold, deskew before OCR</li>
-                <li>Debounced packets — update only when context changes</li>
-                <li>Window metadata fused with extracted text</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-sm">
-              <h3>Reasoning</h3>
-              <p>Ollama runs locally with streaming output — no API latency, no usage caps, no data leaving the machine.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Fast vs deep model routing</li>
-                <li>Markdown streamed into overlay</li>
-                <li>Prompt templates per task type</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-sm">
-              <h3>Memory</h3>
-              <p>Mem0 + ChromaDB remember how you work — shortcuts, preferences, and recurring questions across sessions.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Short-term session context</li>
-                <li>Long-term habit embeddings</li>
-                <li>Local-only vector storage</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-wide-bottom">
-              <h3>Desktop UX</h3>
-              <p>Designed to feel like a comic sidekick in the background — present when needed, invisible when you’re in flow.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Global hotkeys with customizable bindings</li>
-                <li>Tray icon: idle, thinking, error states</li>
-                <li>Non-blocking overlay on top of any application</li>
-                <li>Minimal chrome — answers, not another full app window</li>
-              </ul>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>Ollama</li><li>ChromaDB</li><li>Mem0</li><li>Python</li><li>OCR</li><li>OpenCV</li></ul>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 5: Tone -->
-      <article class="comic-spread spread-double" data-spread="5" aria-label="Tone project">
-        <div class="comic-page page-left">
-          <div class="panel-layout layout-comic layout-omni-l">
-            <div class="panel panel-hero panel-hero-ai">
-              <span class="stamp stamp-live">Live!</span>
-              <h2 class="project-title">Tone.</h2>
-              <p class="project-role">Behavioral Drift Detector for LLM Outputs · Personal Product</p>
-              <p class="project-date">Aug 2026 – Present · Live in production</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">Continuous probes · Embedding MMD · Token KL · Persona cosine</p>
-            </div>
-            <div class="panel panel-body panel-pipeline">
-              <h3>The Problem</h3>
-              <p>Deployed LLMs don’t fail loudly — they <strong>drift</strong>. A system-prompt tweak, a model swap, or a poisoned instruction can make tone colder, facts wrong, or persona hijacked while the API still returns 200s. Tone treats that as an observability problem.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Probe library across <strong>tone / fact / persona</strong> categories</li>
-                <li>Baseline distribution vs live samples on a schedule</li>
-                <li>Weighted drift score with configurable alert thresholds</li>
-                <li>“Poison system prompt” demo to prove the detector fires</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-privacy">
-              <h3>Architecture</h3>
-              <p class="flow-line">OpenAI-compatible LLM → Sampler → Embedder → ChromaDB → Drift Detector → Dashboard</p>
-              <ul class="bullet-list bullet-tight">
-                <li><strong>Sampler</strong> — scheduled + on-demand probe cycles against any OpenAI-compatible endpoint</li>
-                <li><strong>Embedder</strong> — <code>all-MiniLM-L6-v2</code> vectors stored in ChromaDB</li>
-                <li><strong>Detector</strong> — MMD (RBF), token KL divergence, sliding-window cosine</li>
-                <li><strong>Product layer</strong> — JWT + Google OAuth, encrypted API keys, per-user isolation</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-roadmap">
-              <h3>Shipped to Production</h3>
-              <p class="panel-caption">Solo build · custom domain · Railway</p>
-              <ul class="bullet-list bullet-tight">
-                <li>React + Recharts dashboard: drift timeline, category heatmap, baseline vs current</li>
-                <li>FastAPI jobs API so long sample/baseline runs don’t die on proxy timeouts</li>
-                <li>Connect any OpenAI-compatible API (OpenAI, Groq, OpenRouter, Ollama, …)</li>
-                <li>Live at <strong>tonehq.xyz</strong> with <strong>api.tonehq.xyz</strong></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <div class="panel-layout layout-comic layout-omni-r">
-            <div class="panel panel-body panel-big">
-              <h3>Three Signals, One Score</h3>
-              <p>Drift isn’t one number from one trick — Tone runs three complementary checks and combines them so a single noisy metric can’t hide a real personality or factual shift.</p>
-              <ul class="bullet-list bullet-tight">
-                <li><strong>MMD</strong> — distribution distance in embedding space vs the baseline corpus</li>
-                <li><strong>KL</strong> — token-distribution shift between baseline and live text</li>
-                <li><strong>Cosine</strong> — nearest-baseline similarity per probe, rolled into category drift</li>
-                <li>PCA explainability panel for “what moved” in embedding space</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-sm">
-              <h3>Product UX</h3>
-              <p>Built like a real monitoring console — not a notebook demo.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Auth-gated accounts (email + Google)</li>
-                <li>Background jobs + live progress banner</li>
-                <li>Heatmap + alerts when scores cross threshold</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-sm">
-              <h3>Why It Matters</h3>
-              <p>Same discipline as production data systems: measure the thing that can silently break, surface it early, and make the failure mode demoable.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>LLM ops / eval adjacent</li>
-                <li>Full-stack from stats → UI → deploy</li>
-                <li>Owns the pipeline end-to-end</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-wide-bottom">
-              <h3>Stack &amp; Links</h3>
-              <p>FastAPI · React · TypeScript · sentence-transformers · ChromaDB · Railway · Porkbun DNS · encrypted connection store.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>OpenAI-compatible clients so one connector covers cloud and local models</li>
-                <li>Job store + cached heatmap so the dashboard stays responsive under load</li>
-                <li>Custom domain cutover with TLS on apex + API subdomain</li>
-              </ul>
-              <p class="panel-foot">
-                <a href="https://tonehq.xyz" class="comic-link" target="_blank" rel="noopener noreferrer">tonehq.xyz →</a>
-                &nbsp;·&nbsp;
-                <a href="https://github.com/Saarth09/Tone" class="comic-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
-              </p>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>FastAPI</li><li>React</li><li>TypeScript</li><li>ChromaDB</li><li>MMD</li><li>Railway</li></ul>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 6: Spotify + Pokémon GO -->
-      <article class="comic-spread spread-double" data-spread="6" aria-label="Spotify and Pokémon projects">
-        <div class="comic-page page-left">
-          <div class="panel-layout layout-comic layout-duo-spotify">
-            <div class="panel panel-hero panel-hero-compact">
-              <h2 class="project-title">Spotify Clone</h2>
-              <p class="project-role">Full-Stack · Personal</p>
-              <p class="project-date">Sep – Dec 2025</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">Streaming · Voice ID · FFT in browser</p>
-            </div>
-            <div class="panel panel-body">
-              <h3>What It Does</h3>
-              <p>A full Spotify-style client built on the official Web API — browse catalogs, play tracks with gapless transitions, manage queues, and persist session state across refreshes.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>OAuth 2.0 with silent token refresh</li>
-                <li>Player UI: art, scrubber, volume, queue drawer</li>
-                <li>Search-as-you-type across albums, artists, tracks</li>
-                <li>Session persistence — pick up where you left off</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-split">
-              <h3>Voice Pipeline</h3>
-              <p>Hands-free track ID: microphone input → Web Audio FFT → fingerprint matching against the catalog — signal processing running entirely in the browser.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Real-time frequency peak extraction</li>
-                <li>Fingerprint hash compare to Spotify IDs</li>
-                <li>No server round-trip for audio analysis</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-split-alt">
-              <h3>Shipped</h3>
-              <ul class="bullet-list bullet-tight">
-                <li>Playback & queue orchestration with skip/previous</li>
-                <li>Debounced search with loading states</li>
-                <li>Robust auth error handling & token lifecycle</li>
-                <li>FFT demo proving DSP + frontend integration</li>
-              </ul>
-            </div>
-            <div class="panel panel-link-box">
-              <a href="https://github.com/Saarth09" class="comic-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <div class="panel-layout layout-comic layout-duo-pokemon">
-            <div class="panel panel-hero panel-hero-compact panel-hero-alt">
-              <h2 class="project-title">Pokémon GO Analyst</h2>
-              <p class="project-role">ML + CV · Personal</p>
-              <p class="project-date">Sep – Oct 2025</p>
-            </div>
-            <div class="panel panel-accent panel-accent-pop">
-              <p class="impact-line">3 hours → 3 seconds</p>
-            </div>
-            <div class="panel panel-stat-banner">
-              <span class="stat-num">3,600×</span>
-              <span class="stat-label">faster than manual league spreadsheets</span>
-            </div>
-            <div class="panel panel-body panel-rank">
-              <h3>Rankings Engine</h3>
-              <p>Competitive Pokémon GO players used to spend hours in spreadsheets ranking species per league. This pipeline ingests battle footage, extracts frames with OpenCV, infers stats, and outputs the <strong>top 500 per league</strong> automatically.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Video ingest → frame sampling → CV feature extraction</li>
-                <li>Meta scoring for Great, Ultra, and Master leagues</li>
-                <li>Ranked lists + CSV export for team building</li>
-                <li>Repeatable runs — same input, same reproducible output</li>
-              </ul>
-              <p class="panel-foot">Before: ~3 hours of manual work per league. After: ~3 seconds per automated run — a 3,600× speedup.</p>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>Python</li><li>OpenCV</li><li>ML</li><li>Video</li></ul>
-            </div>
-            <div class="panel panel-link-box">
-              <a href="https://github.com/Saarth09" class="comic-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 7: GDSC Housing + Mini-Golf -->
-      <article class="comic-spread spread-double" data-spread="7" aria-label="GDSC and Mini-Golf projects">
-        <div class="comic-page page-left">
-          <div class="panel-layout layout-comic layout-duo-housing">
-            <div class="panel panel-hero panel-hero-compact panel-hero-campus">
-              <h2 class="project-title">GDSC Davis Housing</h2>
-              <p class="project-role">Campus Product · Group</p>
-              <p class="project-date">Sep 2024 – Jun 2025</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">50+ student testers before launch</p>
-            </div>
-            <div class="panel panel-stat-banner panel-stat-banner-sm">
-              <span class="stat-num">50+</span>
-              <span class="stat-label">students validated features in active dev</span>
-            </div>
-            <div class="panel panel-body panel-feature-wide">
-              <h3>Product</h3>
-              <p>Group project through Google Developer Student Clubs — a housing discovery platform for UC Davis students tired of scattered Facebook posts and outdated spreadsheets.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>React SPA with Firebase Authentication & Firestore</li>
-                <li>Student reviews, star ratings, and community rankings</li>
-                <li>Search & filter by price, distance, bedrooms, amenities</li>
-                <li>Iterated with <strong>50+ student testers</strong> during active development</li>
-                <li>Designed for mobile-first housing hunts before lease season</li>
-              </ul>
-              <p class="panel-foot">Mission: one trusted place to compare Davis apartments before signing a lease.</p>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>React</li><li>Firebase</li><li>Auth</li></ul>
-            </div>
-            <div class="panel panel-link-box">
-              <a href="https://github.com/Saarth09" class="comic-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
-            </div>
-          </div>
-        </div>
-        <div class="comic-spine" aria-hidden="true"></div>
-        <div class="comic-page page-right">
-          <div class="panel-layout layout-comic layout-duo-golf">
-            <div class="panel panel-hero panel-hero-compact panel-hero-game">
-              <h2 class="project-title">Mini-Golf Engine</h2>
-              <p class="project-role">Game Physics · Personal</p>
-              <p class="project-date">Jun – Sep 2024</p>
-            </div>
-            <div class="panel panel-accent">
-              <p class="impact-line">60 FPS · Zero physics middleware</p>
-            </div>
-            <div class="panel panel-body panel-physics-main">
-              <h3>Custom Engine</h3>
-              <p>A from-scratch Pygame mini-golf sim — no Box2D, no middleware. Every bounce, ramp, and sink is hand-tuned collision math running at a locked frame rate.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Circle–segment collision with wall normals</li>
-                <li>Friction ramps that accelerate or slow the ball</li>
-                <li>Ricochet angles computed from surface geometry</li>
-                <li>Per-hole stroke limits and win/lose logic</li>
-                <li>Levels defined via coordinate configs — easy to extend</li>
-              </ul>
-            </div>
-            <div class="panel panel-body panel-physics-side">
-              <h3>Why It Matters</h3>
-              <p>Shows I understand performance-critical loops, not just CRUD. The same discipline applies to ETL throughput and real-time dashboards.</p>
-              <ul class="bullet-list bullet-tight">
-                <li>Fixed timestep — deterministic physics ticks</li>
-                <li>Manual integration — velocity, position, restitution</li>
-                <li>Profiling-driven optimization for smooth frames</li>
-              </ul>
-            </div>
-            <div class="panel panel-inset panel-fps">
-              <span class="inset-label">Performance</span>
-              <p><strong>60 FPS</strong> locked throughout — rendering, collision checks, and scoring update every frame with no dropped ticks.</p>
-            </div>
-            <div class="panel panel-tags">
-              <ul class="tag-list"><li>Python</li><li>Pygame</li><li>Physics</li></ul>
-            </div>
-            <div class="panel panel-link-box">
-              <a href="https://github.com/Saarth09" class="comic-link" target="_blank" rel="noopener noreferrer">GitHub →</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <!-- SPREAD 8: Back cover -->
-      <article class="comic-spread spread-back" data-spread="8" aria-label="Back cover contact">
-        <div class="comic-page page-back">
-          <div class="cover-border cover-border-back">
-            <p class="issue-tag">The End?</p>
-            <h2 class="back-title">Get In Touch</h2>
-            <p class="back-intro">
-              Open to <strong>software engineering internships</strong>, research collaborations, and ambitious product builds.
-              I’m especially excited about roles in full-stack development, data platforms, LLM systems, computer vision, and on-device AI —
-              anywhere shipping reliable software matters more than slide decks.
-            </p>
-            <p class="back-intro back-intro-secondary">
-              Based in Davis, CA · willing to relocate · happy to chat about ASUCD-scale data work or products like Tone and Omnitrix.
-            </p>
-            <div class="panel-layout layout-contact">
-              <a href="mailto:Saarth0909@gmail.com" class="panel panel-contact">
-                <span class="contact-label">Email</span>
-                <span class="contact-value">Saarth0909@gmail.com</span>
-              </a>
-              <a href="tel:+15303764161" class="panel panel-contact">
-                <span class="contact-label">Phone</span>
-                <span class="contact-value">(530) 376-4161</span>
-              </a>
-              <a href="https://github.com/Saarth09" class="panel panel-contact" target="_blank" rel="noopener noreferrer">
-                <span class="contact-label">GitHub</span>
-                <span class="contact-value">@Saarth09</span>
-              </a>
-            </div>
-            <p class="back-footer">© 2026 Saarth Kishore</p>
-            <button type="button" class="open-comic-btn back-btn" data-goto="0">← Back to Cover</button>
-          </div>
-        </div>
-      </article>
-
+      <nav class="site-nav" id="siteNav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <div class="comic-chrome-bottom">
-      <p class="spread-progress" id="spreadProgress" aria-live="polite">Spread 1 of 9 · Cover</p>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="shell hero-inner reveal">
+        <p class="hero-eyebrow">Software Engineer · UC Davis CE · Class of 2027</p>
+        <h1 class="hero-name">Saarth Kishore</h1>
+        <p class="hero-tagline">
+          I build production data platforms, LLM observability tools, and on-device AI —
+          software that ships for real users, not slide decks.
+        </p>
+        <div class="hero-links">
+          <a href="mailto:Saarth0909@gmail.com">Email</a>
+          <a href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/saarth-kishore-3716b81b5/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="Saarth%20Kishore%20Resume.pdf">Resume</a>
+        </div>
+        <dl class="stat-row">
+          <div class="stat">
+            <dt>9+</dt>
+            <dd>Campus data partners</dd>
+          </div>
+          <div class="stat">
+            <dt>3,600×</dt>
+            <dd>Pokémon ranking speedup</dd>
+          </div>
+          <div class="stat">
+            <dt>Live</dt>
+            <dd>Tone · Beyond Art · Aggies</dd>
+          </div>
+          <div class="stat">
+            <dt>60 FPS</dt>
+            <dd>Custom physics engine</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="shell reveal">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Builder who owns the pipeline</h2>
+        <div class="prose">
+          <p>
+            I’m a Computer Engineering student at UC Davis (Mathematics minor) who ships software
+            end-to-end. At <strong>ASUCD Innovation &amp; Research Lab</strong> I develop production
+            systems for <strong>Aggies on the Move</strong> — unifying mobility feeds from 9+ campus
+            partners into PostgreSQL warehouses and React dashboards used daily by researchers and staff.
+          </p>
+          <p>
+            I also ship AI products: <strong>Tone</strong> monitors deployed LLMs for behavioral drift
+            (embedding-space MMD, token KL, persona cosine), and <strong>Omnitrix</strong> is an always-on
+            desktop assistant — screen-aware context, local Ollama reasoning, and vector memory —
+            engineered for privacy and speed.
+          </p>
+          <p>
+            Looking for teams that care about impact: internships, research labs, and ambitious product builds
+            in full-stack, data platforms, LLM systems, and computer vision.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="experience">
+      <div class="shell reveal">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Where I ship in production</h2>
+
+        <article class="job-card">
+          <header class="card-head">
+            <div>
+              <h3 class="card-title">Software Developer</h3>
+              <p class="card-meta">ASUCD Innovation &amp; Research Lab · Aggies on the Move</p>
+            </div>
+            <div class="card-meta-right">
+              <span class="pill pill-live">Live</span>
+              <time class="card-dates">Dec 2025 – Present</time>
+            </div>
+          </header>
+          <p class="card-problem">
+            Campus mobility data lived in siloed partner feeds. Researchers and transportation staff
+            needed one trusted warehouse and dashboards — not another prototype.
+          </p>
+          <ul class="card-bullets">
+            <li>Design warehouse schemas and migrations; ETL across 9+ partner formats with validation, retries, and alerting</li>
+            <li>Ship React dashboards for ridership, parking occupancy, and permit analytics used by non-technical staff</li>
+            <li>Tune PostgreSQL indexes and query patterns for researcher workloads; document ingestion playbooks for new partners</li>
+            <li>Coordinate field mappings and data-quality SLAs; debug production issues when feeds drift or APIs change</li>
+          </ul>
+          <ul class="tags">
+            <li>React</li><li>PostgreSQL</li><li>ETL</li><li>Data Pipelines</li><li>Analytics</li>
+          </ul>
+          <div class="card-links">
+            <a class="text-link" href="https://aggiesonthemove.irl.ucdavis.edu/" target="_blank" rel="noopener noreferrer">aggiesonthemove.irl.ucdavis.edu</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="shell">
+        <div class="reveal">
+          <p class="section-label">Projects</p>
+          <h2 class="section-title">Flagship products</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Tone</h3>
+                <p class="card-meta">Behavioral drift detector for LLM outputs</p>
+              </div>
+              <div class="card-meta-right">
+                <span class="pill pill-live">Live</span>
+                <time class="card-dates">Aug 2026 – Present</time>
+              </div>
+            </header>
+            <p class="card-problem">
+              Deployed LLMs don’t fail loudly — they drift. Tone treats tone, factual, and persona shifts
+              as an observability problem with continuous probes and a weighted drift score.
+            </p>
+            <ul class="card-bullets">
+              <li>Sampler + embedder (<code>all-MiniLM-L6-v2</code>) + ChromaDB; detector combines MMD, token KL, and cosine</li>
+              <li>React + Recharts dashboard with heatmap, alerts, JWT/Google auth, encrypted API keys</li>
+              <li>FastAPI jobs API; OpenAI-compatible connectors; live at tonehq.xyz / api.tonehq.xyz on Railway</li>
+            </ul>
+            <ul class="tags">
+              <li>FastAPI</li><li>React</li><li>TypeScript</li><li>ChromaDB</li><li>MMD</li><li>Railway</li>
+            </ul>
+            <div class="card-links">
+              <a class="text-link" href="https://tonehq.xyz" target="_blank" rel="noopener noreferrer">tonehq.xyz</a>
+              <a class="text-link" href="https://github.com/Saarth09/Tone" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Omnitrix</h3>
+                <p class="card-meta">On-device personal AI assistant</p>
+              </div>
+              <div class="card-meta-right">
+                <span class="pill">In development</span>
+                <time class="card-dates">Mar 2026 – Present</time>
+              </div>
+            </header>
+            <p class="card-problem">
+              Cloud assistants train on your screen data. Omnitrix keeps perception, reasoning, and memory
+              on-device — always available, never uploading pixels.
+            </p>
+            <ul class="card-bullets">
+              <li>Screen capture → OCR/CV → local Ollama LLM → Mem0 + ChromaDB → tray overlay</li>
+              <li>Active-window context, streaming responses, vector memory for habits across sessions</li>
+              <li>Global hotkeys and non-blocking overlay; offline-capable once models are pulled</li>
+            </ul>
+            <ul class="tags">
+              <li>Python</li><li>Ollama</li><li>OpenCV</li><li>OCR</li><li>ChromaDB</li><li>Mem0</li>
+            </ul>
+            <div class="card-links">
+              <span class="muted-note">Private / active development</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Beyond Art</h3>
+                <p class="card-meta">UE5 draw-to-manifest sandbox</p>
+              </div>
+              <div class="card-meta-right">
+                <span class="pill pill-live">Live on itch</span>
+                <time class="card-dates">May 2026 – Present</time>
+              </div>
+            </header>
+            <p class="card-problem">
+              Players sketch weapons, body parts, and tools that become playable gear.
+              Sketch quality maps to stats — the better you draw, the better it works.
+            </p>
+            <ul class="card-bullets">
+              <li>In-game forge → PNG export → cloud Judge Bridge (validate + hybrid ink/AI score) → equip</li>
+              <li>Mode B: game on itch.io, judge on Render — gameplay and AI update independently</li>
+              <li>Melee, ranged, and body forges shipped; fairness floors/ceilings and anti-exploit guards</li>
+            </ul>
+            <ul class="tags">
+              <li>Unreal Engine 5</li><li>Python</li><li>Computer Vision</li><li>Render</li><li>Game Design</li>
+            </ul>
+            <div class="card-links">
+              <a class="text-link" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">itch.io</a>
+              <a class="text-link" href="beyond-art.html">Case study</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="reveal" style="margin-top: 3rem;">
+          <h2 class="section-title section-title-sm">Other builds</h2>
+        </div>
+
+        <div class="project-grid project-grid-2">
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Spotify Clone</h3>
+                <p class="card-meta">Full-stack streaming client</p>
+              </div>
+              <time class="card-dates">Sep – Dec 2025</time>
+            </header>
+            <p class="card-problem">
+              Spotify-style client on the official Web API — playback, queues, and browser-side voice ID via FFT.
+            </p>
+            <ul class="card-bullets">
+              <li>OAuth 2.0 with silent refresh; search, scrubber, queue, session persistence</li>
+              <li>Microphone → Web Audio FFT → fingerprint match entirely in the browser</li>
+            </ul>
+            <ul class="tags"><li>JavaScript</li><li>Web Audio</li><li>OAuth</li><li>Spotify API</li></ul>
+            <div class="card-links">
+              <a class="text-link" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Pokémon GO Analyst</h3>
+                <p class="card-meta">ML + computer vision rankings</p>
+              </div>
+              <time class="card-dates">Sep – Oct 2025</time>
+            </header>
+            <p class="card-problem">
+              Competitive ranking used to take ~3 hours of spreadsheets per league. Automated to ~3 seconds (3,600×).
+            </p>
+            <ul class="card-bullets">
+              <li>Video ingest → OpenCV frames → meta scoring for Great / Ultra / Master</li>
+              <li>Top-500 ranked lists + CSV export; reproducible runs</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>OpenCV</li><li>ML</li><li>Video</li></ul>
+            <div class="card-links">
+              <a class="text-link" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">GDSC Davis Housing</h3>
+                <p class="card-meta">Campus housing discovery</p>
+              </div>
+              <time class="card-dates">Sep 2024 – Jun 2025</time>
+            </header>
+            <p class="card-problem">
+              Students compared apartments via scattered posts and outdated sheets. Built one trusted discovery app with GDSC.
+            </p>
+            <ul class="card-bullets">
+              <li>React + Firebase Auth/Firestore: reviews, ratings, filters by price and amenities</li>
+              <li>Iterated with 50+ student testers before launch</li>
+            </ul>
+            <ul class="tags"><li>React</li><li>Firebase</li><li>Auth</li></ul>
+            <div class="card-links">
+              <a class="text-link" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Mini-Golf Engine</h3>
+                <p class="card-meta">From-scratch game physics</p>
+              </div>
+              <time class="card-dates">Jun – Sep 2024</time>
+            </header>
+            <p class="card-problem">
+              No middleware physics — every bounce and ramp is hand-tuned collision math at a locked 60 FPS.
+            </p>
+            <ul class="card-bullets">
+              <li>Circle–segment collision, friction ramps, fixed timestep, config-driven levels</li>
+              <li>Shows performance-critical loop discipline beyond CRUD apps</li>
+            </ul>
+            <ul class="tags"><li>Python</li><li>Pygame</li><li>Physics</li></ul>
+            <div class="card-links">
+              <a class="text-link" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="skills">
+      <div class="shell reveal">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">Technical toolkit</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <ul class="tags">
+              <li>C</li><li>C++</li><li>Python</li><li>Java</li><li>JavaScript</li><li>TypeScript</li><li>Node.js</li><li>Next.js</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="tags">
+              <li>React</li><li>HTML</li><li>CSS</li><li>Dashboards</li><li>Rapid Prototyping</li><li>Web Audio</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend &amp; APIs</h3>
+            <ul class="tags">
+              <li>REST APIs</li><li>PostgreSQL</li><li>SQL</li><li>ETL</li><li>Pytest</li><li>System Design</li><li>MongoDB</li><li>CI/CD</li><li>Git</li>
+            </ul>
+          </div>
+          <div class="skill-group">
+            <h3>Data &amp; AI</h3>
+            <ul class="tags">
+              <li>Machine Learning</li><li>Computer Vision</li><li>OCR</li><li>LLMs</li><li>RAG</li><li>ChromaDB</li><li>Ollama</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li>
+            </ul>
+          </div>
+          <div class="skill-group skill-group-wide">
+            <h3>Game Development</h3>
+            <ul class="tags">
+              <li>Unreal Engine 5</li><li>Sandbox Design</li><li>Gameplay Systems</li><li>Physics</li><li>Procedural Generation</li><li>Pygame</li><li>Blueprints</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="education">
+      <div class="shell reveal">
+        <p class="section-label">Education</p>
+        <h2 class="section-title">UC Davis</h2>
+        <div class="edu-grid">
+          <div>
+            <p class="edu-degree">B.S. Computer Engineering · Minor in Mathematics</p>
+            <p class="card-meta">Expected graduation June 2027 · Class of 2027</p>
+            <p class="prose" style="margin-top: 1rem;">
+              Systems, algorithms, architecture, and hardware — paired with production software at ASUCD IRL
+              and shipped personal products in data, ML, and games.
+            </p>
+          </div>
+          <div>
+            <h3 class="edu-sub">Core coursework</h3>
+            <ul class="card-bullets">
+              <li>DSA, Algorithms, OOP</li>
+              <li>Computer Architecture &amp; Networks</li>
+              <li>Circuits I &amp; II</li>
+              <li>PDEs &amp; Abstract Math</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="contact">
+      <div class="shell reveal">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let’s talk</h2>
+        <p class="prose contact-lede">
+          Open to software engineering internships, research collaborations, and ambitious product builds.
+          Based in Davis, CA — willing to relocate.
+        </p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:Saarth0909@gmail.com">
+            <span class="contact-label">Email</span>
+            <span class="contact-value">Saarth0909@gmail.com</span>
+          </a>
+          <a class="contact-item" href="tel:+15303764161">
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">(530) 376-4161</span>
+          </a>
+          <a class="contact-item" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value">@Saarth09</span>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/saarth-kishore-3716b81b5/" target="_blank" rel="noopener noreferrer">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value">saarth-kishore</span>
+          </a>
+          <a class="contact-item" href="Saarth%20Kishore%20Resume.pdf">
+            <span class="contact-label">Resume</span>
+            <span class="contact-value">PDF download</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© 2026 Saarth Kishore</p>
     </div>
-  </div>
+  </footer>
 
-  <script src="script.js?v=14"></script>
+  <script src="script.js?v=20"></script>
 </body>
 </html>
