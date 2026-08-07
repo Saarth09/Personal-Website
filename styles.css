@@ -1633,3 +1633,318 @@ body {
     overflow-y: auto;
   }
 }
+
+/* ── Beyond Art case study page ── */
+body.case-page {
+  height: auto;
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html:has(body.case-page) {
+  height: auto;
+  overflow: auto;
+}
+
+.case-top {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem clamp(1rem, 3vw, 2rem);
+  background: rgba(255, 248, 231, 0.94);
+  border-bottom: var(--border);
+  backdrop-filter: blur(8px);
+}
+
+.case-back,
+.case-play {
+  font-family: var(--font-comic);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--blue);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.case-back:hover,
+.case-play:hover {
+  border-bottom-color: var(--blue);
+}
+
+.case-brand {
+  font-family: var(--font-hero);
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.case-main {
+  position: relative;
+  z-index: 10;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.5rem clamp(1rem, 3vw, 1.5rem) 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.case-hero,
+.case-section,
+.case-toc {
+  padding: 1.15rem 1.25rem;
+  box-shadow: var(--comic-shadow-sm);
+}
+
+.case-hero {
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(30, 111, 217, 0.08) 0%, transparent 45%),
+    var(--paper);
+}
+
+.case-hero .stamp {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.case-kicker {
+  font-family: var(--font-comic);
+  color: var(--blue);
+  letter-spacing: 0.06em;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+}
+
+.case-title {
+  font-family: var(--font-hero);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  line-height: 1.05;
+  margin-bottom: 0.4rem;
+}
+
+.case-tagline {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.85rem;
+}
+
+.case-lede {
+  font-size: 1.05rem;
+  margin-bottom: 1rem;
+  max-width: 42rem;
+}
+
+.case-tags {
+  margin-bottom: 1rem;
+}
+
+.case-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.case-btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-comic);
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 0.9rem;
+  border: var(--border);
+  background: var(--paper-dark);
+  color: var(--ink);
+  text-decoration: none;
+  box-shadow: var(--comic-shadow-sm);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.case-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.case-btn-primary {
+  background: var(--red);
+  color: var(--white);
+}
+
+.case-h2 {
+  font-family: var(--font-comic);
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  margin-bottom: 0.65rem;
+}
+
+.case-h3 {
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  color: var(--blue);
+  margin: 0.85rem 0 0.4rem;
+}
+
+.case-section p,
+.case-toc p {
+  margin-bottom: 0.65rem;
+}
+
+.case-section .bullet-list,
+.case-section .case-steps {
+  margin: 0.5rem 0 0.75rem 1.15rem;
+}
+
+.case-steps {
+  padding-left: 1.15rem;
+}
+
+.case-steps li,
+.case-section .bullet-list li {
+  margin-bottom: 0.35rem;
+}
+
+.case-toc-list {
+  margin-left: 1.25rem;
+  columns: 2;
+  gap: 1.5rem;
+}
+
+.case-toc-list a {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.case-toc-list a:hover {
+  text-decoration: underline;
+}
+
+.case-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.case-code {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  background: #1f1f26;
+  color: #f5ecd6;
+  border: var(--border);
+  padding: 0.85rem 1rem;
+  overflow-x: auto;
+  margin: 0.65rem 0 0.85rem;
+  white-space: pre-wrap;
+}
+
+.case-challenge {
+  border-left: 4px solid var(--red);
+  padding: 0.35rem 0 0.35rem 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.case-challenge .case-h3 {
+  margin-top: 0;
+}
+
+.case-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.65rem 0 1rem;
+  font-size: 0.95rem;
+}
+
+.case-table th,
+.case-table td {
+  border: 2px solid var(--ink);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.case-table th {
+  background: var(--yellow);
+  font-family: var(--font-comic);
+  letter-spacing: 0.03em;
+}
+
+.case-table td:first-child {
+  font-weight: 700;
+  width: 38%;
+}
+
+.panel-quote-inline {
+  font-family: var(--font-comic);
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  border-left: 4px solid var(--yellow);
+  padding-left: 0.75rem;
+  margin: 0.85rem 0 0.25rem;
+}
+
+.case-footer-panel {
+  text-align: center;
+  background: linear-gradient(145deg, var(--paper-dark), var(--paper));
+}
+
+.case-footer-line {
+  font-family: var(--font-comic);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.85rem !important;
+}
+
+.panel-beyond-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0.45rem;
+  background: linear-gradient(145deg, #ffe8a3 0%, var(--yellow) 100%);
+  min-height: 0;
+}
+
+.panel-beyond-cta .coming-soon-label {
+  color: var(--ink);
+}
+
+.beyond-cta-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.85rem;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .case-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .case-toc-list {
+    columns: 1;
+  }
+
+  .case-hero .stamp {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+  }
+
+  .case-top {
+    flex-wrap: wrap;
+  }
+}

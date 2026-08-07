@@ -4,6 +4,7 @@ const SPREAD_LABELS = [
   "ASUCD",
   "Beyond Art",
   "Omnitrix",
+  "Tone",
   "Builds",
   "Campus",
   "Contact",

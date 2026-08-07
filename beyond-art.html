@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Beyond Art — UE5 draw-to-manifest sandbox by Saarth Kishore. Sketch weapons and body parts that become playable gear; hybrid vision + ink judging; cloud Mode B deploy on Render + itch.io." />
+  <title>Beyond Art · Saarth Kishore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=14" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="case-page">
+  <div class="stage-vignette" aria-hidden="true"></div>
+  <div class="halftone-bg" aria-hidden="true"></div>
+
+  <header class="case-top">
+    <a class="case-back" href="index.html">← Portfolio</a>
+    <span class="case-brand">Saarth Kishore</span>
+    <a class="case-play" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Play on itch.io →</a>
+  </header>
+
+  <main class="case-main">
+    <section class="case-hero panel">
+      <span class="stamp stamp-live">Live on itch!</span>
+      <p class="case-kicker">Case Study · Personal Project · May 2026 – Present</p>
+      <h1 class="case-title">Beyond Art</h1>
+      <p class="case-tagline">Draw-to-manifest sandbox in Unreal Engine 5 — <em>the better you draw, the better it works.</em></p>
+      <p class="case-lede">
+        Beyond Art is a third-person creative sandbox where player sketches become playable weapons,
+        ranged gear, and body customizations. A hybrid <strong>vision + ink-metrics judge</strong>
+        validates drawings and scores stats. The game ships to players on itch.io while the judge
+        runs as a separate cloud service — so gameplay builds and AI logic update independently.
+      </p>
+      <ul class="tag-list case-tags">
+        <li>Unreal Engine 5.8</li>
+        <li>Blueprints</li>
+        <li>Python</li>
+        <li>Computer Vision</li>
+        <li>Gemini / Ollama</li>
+        <li>Render</li>
+        <li>itch.io</li>
+        <li>HTTP + JSON</li>
+      </ul>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Download / Play</a>
+        <a class="case-btn" href="https://github.com/Saarth09" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="case-btn" href="index.html">Back to comic portfolio</a>
+      </div>
+    </section>
+
+    <nav class="case-toc panel" aria-label="On this page">
+      <h2 class="case-h2">On this page</h2>
+      <ol class="case-toc-list">
+        <li><a href="#hook">The hook</a></li>
+        <li><a href="#loop">Player loop</a></li>
+        <li><a href="#systems">Gameplay systems</a></li>
+        <li><a href="#judge">AI judge architecture</a></li>
+        <li><a href="#pipeline">Validate → score pipeline</a></li>
+        <li><a href="#modeb">Mode B cloud deploy</a></li>
+        <li><a href="#ue">Unreal engineering</a></li>
+        <li><a href="#hard">Hard problems solved</a></li>
+        <li><a href="#ship">Shipping &amp; updates</a></li>
+        <li><a href="#stack">Stack &amp; role</a></li>
+      </ol>
+    </nav>
+
+    <section id="hook" class="case-section panel">
+      <h2 class="case-h2">The hook</h2>
+      <p>
+        Most sandboxes give you a menu of items. Beyond Art gives you a <strong>blank canvas</strong>.
+        Want to smash a building? Draw a sword, axe, or boxing gloves. Want to run faster?
+        Draw legs. Want a ranged loadout? Draw a pistol, rifle, or bow — then draw the projectile art.
+      </p>
+      <p>
+        Three ideas stacked into one fantasy:
+      </p>
+      <ul class="bullet-list">
+        <li><strong>Creative expression</strong> — invent solutions like Scribblenauts, not a fixed shop.</li>
+        <li><strong>Skill expression</strong> — better, clearer drawings map to stronger stats (crafting-quality fantasy).</li>
+        <li><strong>Emergent gameplay</strong> — players invent tools; the systems react with validation, stats, and equip.</li>
+      </ul>
+      <p class="panel-quote-inline">“The better you draw, the better it works” — the entire product promise in one sentence.</p>
+    </section>
+
+    <section id="loop" class="case-section panel">
+      <h2 class="case-h2">Player loop</h2>
+      <ol class="case-steps">
+        <li><strong>Explore</strong> a stylized third-person city sandbox (low-poly / modular plaza).</li>
+        <li><strong>Open the forge</strong> (draw UI) for melee weapons, ranged weapons, or body slots.</li>
+        <li><strong>Sketch</strong> on a 1024×1024 render-target canvas with brush, color wheel, clear/confirm.</li>
+        <li><strong>Confirm</strong> → export PNG → send to the Judge Bridge → validate (+ reject with a clear reason) or score stats.</li>
+        <li><strong>Equip</strong> the drawing as a flat textured weapon / projectile / body customization and play.</li>
+      </ol>
+      <p>
+        Invalid drawings are hard-blocked with a friendly message (empty canvas, obvious rectangles,
+        wrong subject). Valid drawings always produce something usable, with stats clamped so
+        balance doesn’t explode.
+      </p>
+    </section>
+
+    <section id="systems" class="case-section panel">
+      <h2 class="case-h2">Gameplay systems shipped</h2>
+      <div class="case-grid-2">
+        <div>
+          <h3 class="case-h3">Drawing &amp; forge</h3>
+          <ul class="bullet-list">
+            <li>In-widget paint on <code>RT_DrawCanvas</code> (additive / composite brush materials).</li>
+            <li>Melee forge, ranged forge (weapon + projectile canvases), body customize slots.</li>
+            <li>Export path via <code>Export Render Target</code> → disk PNG under <code>Saved/DrawingJudge/</code>.</li>
+            <li>Base64 encode for cloud Mode B (<code>LoadPngFileAsBase64</code> via FileSDK + Low Entry).</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="case-h3">Combat &amp; character</h3>
+          <ul class="bullet-list">
+            <li>Third-person character with hotbar weapon slots.</li>
+            <li>Melee damage / durability from judge scores.</li>
+            <li>Ranged: aim, zoom, projectiles, weapon-type anims (pistol / rifle / bow).</li>
+            <li>Body slots (legs / arms) apply stat values from the same judge pipeline.</li>
+            <li>Grip UV rules, color wheel, and Fab character mesh integration.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="case-h3">Recognized / scored subjects</h3>
+      <ul class="tag-list">
+        <li>Sword</li><li>Axe</li><li>Spear</li><li>Dagger</li>
+        <li>Pistol</li><li>Rifle</li><li>Bow</li><li>Bazooka</li>
+        <li>Legs</li><li>Arms</li><li>Generic weapon</li>
+      </ul>
+    </section>
+
+    <section id="judge" class="case-section panel">
+      <h2 class="case-h2">AI judge architecture</h2>
+      <p>
+        The game never embeds API keys. Unreal talks only to a small Python service —
+        <code>judge_bridge.py</code> — over HTTP/HTTPS JSON.
+      </p>
+      <pre class="case-code">UE game  →  HTTPS POST (image_base64 + metadata)
+         →  Judge Bridge (Render / local)
+         →  Gemini Flash  (or Ollama / local ink)
+         →  JSON stats back to Blueprints</pre>
+      <h3 class="case-h3">Backends (env-selected)</h3>
+      <ul class="bullet-list">
+        <li><code>local</code> — instant ink heuristics (fast Blueprint testing).</li>
+        <li><code>gemini</code> — Google Gemini Flash vision (primary cloud path).</li>
+        <li><code>ollama</code> — local moondream / vision models for offline AI.</li>
+        <li><code>openai</code> — optional ChatGPT vision.</li>
+      </ul>
+      <h3 class="case-h3">Why a bridge?</h3>
+      <ul class="bullet-list">
+        <li>Blueprint HTTP is awkward for Base64 + long vision latency.</li>
+        <li>Secrets stay on the server (Render env), never in the Shipping package.</li>
+        <li>Game updates ≠ judge updates: repackage the game vs redeploy the bridge.</li>
+        <li>Hybrid scoring: AI for recognition, deterministic ink metrics for fair, repeatable stats.</li>
+      </ul>
+    </section>
+
+    <section id="pipeline" class="case-section panel">
+      <h2 class="case-h2">Validate → score pipeline</h2>
+      <p>Confirm runs <strong>two async HTTP calls</strong> (not one giant request):</p>
+      <div class="case-grid-2">
+        <div>
+          <h3 class="case-h3">1. <code>POST /judge/validate</code></h3>
+          <ul class="bullet-list">
+            <li>Inputs: <code>image_base64</code> (or local <code>image_path</code>), <code>expected_subject</code>, <code>description</code>, <code>context</code>.</li>
+            <li>Ink prefilter rejects empty canvases and hollow rectangles.</li>
+            <li>Vision model checks “does this look like a sword / pistol / legs?”</li>
+            <li>Returns <code>bValid</code>, <code>reject_reason</code>, <code>confidence</code>, <code>detected_subject</code>.</li>
+            <li>Hard block in UI on fail — player must redraw.</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="case-h3">2. <code>POST /judge/score</code></h3>
+          <ul class="bullet-list">
+            <li>Same image + <code>ink_area</code> / context.</li>
+            <li>Weapon contexts → <code>damage</code> + <code>durability</code>.</li>
+            <li>Body contexts → <code>stat_value</code>.</li>
+            <li>Gemini score JSON is unreliable → hybrid uses <strong>instant ink-based score</strong> after validate.</li>
+            <li>Blueprints clamp and apply to equip / HUD.</li>
+          </ul>
+        </div>
+      </div>
+      <h3 class="case-h3">Example validate body</h3>
+      <pre class="case-code">{
+  "image_base64": "&lt;png bytes as base64&gt;",
+  "image_path": "C:/.../weapon.png",
+  "expected_subject": "sword",
+  "description": "sword",
+  "context": "weapon"
+}</pre>
+      <p>
+        <code>GET /judge/ping</code> gates online vs offline fallback so the game stays playable
+        if the bridge is down.
+      </p>
+    </section>
+
+    <section id="modeb" class="case-section panel">
+      <h2 class="case-h2">Mode B — cloud deploy (how other people play)</h2>
+      <p>
+        Local Mode A sent a disk <code>image_path</code> to a Python process on the same PC.
+        Packaged builds can’t do that for strangers. Mode B:
+      </p>
+      <ol class="case-steps">
+        <li>UE exports PNG → reads bytes → Base64 string.</li>
+        <li>Game POSTs JSON to <code>https://artgame-judge.onrender.com</code>.</li>
+        <li>Bridge decodes Base64 to a temp PNG, runs validate/score, returns JSON.</li>
+        <li><code>GEMINI_API_KEY</code> lives only in Render environment variables.</li>
+      </ol>
+      <h3 class="case-h3">Cloud vs home network reality</h3>
+      <p>
+        Free-tier Gemini often works from a residential IP but fails from cloud datacenter IPs
+        (403 / empty candidates). The bridge therefore:
+      </p>
+      <ul class="bullet-list">
+        <li>Soft-accepts clear ink doodles when Gemini is noisy.</li>
+        <li><strong>Falls back to local ink validate</strong> when Gemini throws — so itch players still pass swords/pistols/legs.</li>
+        <li>Uses instant ink scoring for Gemini score (avoids long hangs on “Judging…”).</li>
+      </ul>
+      <p>
+        Deployed as a Docker web service on Render (<code>Dockerfile</code> + <code>render.yaml</code>),
+        health check on <code>/judge/ping</code>, auto-deploy from GitHub
+        (<code>Saarth09/ArtGame_Judge</code>).
+      </p>
+    </section>
+
+    <section id="ue" class="case-section panel">
+      <h2 class="case-h2">Unreal engineering notes</h2>
+      <ul class="bullet-list">
+        <li><strong>Async HTTP in Blueprints</strong> — <code>Http Request</code> + bind <code>On Request Complete</code>; orchestration via custom events (<code>OnJudgeValidateRequested</code>, score, ping).</li>
+        <li><strong>JSON</strong> — Json Blueprint Utilities; string bools (<code>"true"</code>/<code>"false"</code>) for reliable field reads.</li>
+        <li><strong>Long timeouts</strong> — <code>DefaultEngine.ini</code> <code>[HTTP]</code> activity timeouts raised to 180s for cold starts + vision latency.</li>
+        <li><strong>Plugins</strong> — HttpBlueprint, JsonBlueprintUtilities, BlueprintFileUtils, FileSDK, Low Entry Extended Standard Library (Bytes → Base64).</li>
+        <li><strong>Contexts</strong> — <code>weapon</code> / <code>ranged</code> / <code>body_legs</code> / <code>body_arms</code> route finish/fallback equip functions.</li>
+        <li><strong>PNG alpha trap</strong> — UE export often writes alpha=0 (looks blank in Photos); bridge flattens RGB and writes visible previews for debugging.</li>
+      </ul>
+    </section>
+
+    <section id="hard" class="case-section panel">
+      <h2 class="case-h2">Hard problems solved</h2>
+      <div class="case-challenge">
+        <h3 class="case-h3">False “not a weapon” rejects</h3>
+        <p>Ink rectangle prefilter treated stick swords (span all four bbox sides) as boxes. Tightened border-ratio rules; Gemini soft-accept + cloud fallback.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">Ranged stuck on “Judging…”</h3>
+        <p>Score path waited on flaky Gemini JSON. Switched score to hybrid ink metrics; ensure Blueprint routes <code>ranged</code> → ranged finish equip.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">Works locally, fails on Render</h3>
+        <p>Same key/code; Gemini blocked from cloud IPs. Reproduced with live POST; shipped ink fallback so packaged players aren’t bricked.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">Packaging blocked by MSVC</h3>
+        <p>UE 5.8 bans mid MSVC toolchains. Updated Visual Studio / MSVC 14.50+ so Shipping Win64 packages with FileSDK / Low Entry C++ plugins.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">itch upload &gt; 1 GB</h3>
+        <p>Web upload capped at 1 GB; ~1.15 GB package → butler / itch app channel push (<code>windows</code>), email verification, Public visibility.</p>
+      </div>
+    </section>
+
+    <section id="ship" class="case-section panel">
+      <h2 class="case-h2">Shipping &amp; update model</h2>
+      <table class="case-table">
+        <thead>
+          <tr><th>Change</th><th>What you ship</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Gameplay, UI, levels, art</td><td>New UE Shipping package → butler push to itch (<code>:windows</code>)</td></tr>
+          <tr><td>Judge prompts, Gemini, validate rules</td><td>Git push judge repo → Render auto-deploy (no game rebuild)</td></tr>
+          <tr><td>Players</td><td>Internet required for judge; first hit may wait on free-tier cold start</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Live download: <a class="comic-link" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">saarth09.itch.io/beyondart</a>.
+        Steam is feasible later with the same Shipping build + Steamworks; Mode B judge stays on Render.
+      </p>
+    </section>
+
+    <section id="stack" class="case-section panel">
+      <h2 class="case-h2">Stack &amp; what I owned</h2>
+      <p>
+        Solo project end-to-end: design, UE gameplay/UI, Python judge service, cloud deploy,
+        packaging, and distribution.
+      </p>
+      <ul class="tag-list">
+        <li>Unreal Engine 5.8</li>
+        <li>Blueprints</li>
+        <li>C++ plugins (FileSDK, Low Entry)</li>
+        <li>Python 3</li>
+        <li>Pillow</li>
+        <li>Gemini Flash</li>
+        <li>Ollama / moondream</li>
+        <li>Docker</li>
+        <li>Render</li>
+        <li>GitHub</li>
+        <li>itch.io / butler</li>
+        <li>HTTP JSON APIs</li>
+        <li>Computer vision heuristics</li>
+        <li>Prompt engineering</li>
+      </ul>
+      <h3 class="case-h3">Status</h3>
+      <p>
+        Playable Windows build public on itch.io. Core loop live: draw → validate → score → equip
+        for melee, ranged, and body. Ongoing: balance tuning, more object classes, grip polish,
+        and optional Steam release.
+      </p>
+    </section>
+
+    <section class="case-section panel case-footer-panel">
+      <p class="case-footer-line">Beyond Art · Saarth Kishore · UC Davis Computer Engineering</p>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://saarth09.itch.io/beyondart" target="_blank" rel="noopener noreferrer">Play Beyond Art</a>
+        <a class="case-btn" href="index.html">← Back to portfolio</a>
+        <a class="case-btn" href="mailto:Saarth0909@gmail.com">Email</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
