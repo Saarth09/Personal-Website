@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM drift monitoring (Tone), on-device AI (Omnitrix), full-stack systems, and computer vision." />
+  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM reliability stack (Tone + llmtest), on-device AI (Omnitrix), full-stack systems, and computer vision." />
   <title>Saarth Kishore | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,10 +78,10 @@
             partners into PostgreSQL warehouses and React dashboards used daily by researchers and staff.
           </p>
           <p>
-            I also ship AI products: <strong>Tone</strong> monitors deployed LLMs for behavioral drift
-            (embedding-space MMD, token KL, persona cosine), and <strong>Omnitrix</strong> is an always-on
-            desktop assistant — screen-aware context, local Ollama reasoning, and vector memory —
-            engineered for privacy and speed.
+            I also ship AI products: <strong>Tone</strong> is an LLM reliability stack — production drift
+            monitoring, per-conversation goal alignment, and <code>llmtest</code> (pytest for AI behavior)
+            that blocks regressions in CI — and <strong>Omnitrix</strong> is an always-on desktop assistant
+            (screen-aware context, local Ollama, vector memory) engineered for privacy and speed.
           </p>
           <p>
             Looking for teams that care about impact: internships, research labs, and ambitious product builds
@@ -139,7 +139,7 @@
             <header class="card-head">
               <div>
                 <h3 class="card-title">Tone</h3>
-                <p class="card-meta">Behavioral drift detector for LLM outputs</p>
+                <p class="card-meta">LLM reliability stack — prevent, detect, diagnose drift</p>
               </div>
               <div class="card-meta-right">
                 <span class="pill pill-live">Live</span>
@@ -147,16 +147,19 @@
               </div>
             </header>
             <p class="card-problem">
-              Deployed LLMs don’t fail loudly — they drift. Tone treats tone, factual, and persona shifts
-              as an observability problem with continuous probes and a weighted drift score.
+              Deployed LLMs don’t fail loudly — they drift. Tone is a three-layer reliability stack:
+              catch behavioral regressions before merge, monitor production, and diagnose a single chat
+              when it goes off-goal.
             </p>
             <ul class="card-bullets">
-              <li>Sampler + embedder (<code>all-MiniLM-L6-v2</code>) + ChromaDB; detector combines MMD, token KL, and cosine</li>
-              <li>React + Recharts dashboard with heatmap, alerts, JWT/Google auth, encrypted API keys</li>
-              <li>FastAPI jobs API; OpenAI-compatible connectors; live at tonehq.xyz / api.tonehq.xyz on Railway</li>
+              <li><strong>Runtime monitor</strong> — probe sampler + MiniLM embeddings in ChromaDB; MMD, token KL, and cosine drift scores with heatmap alerts</li>
+              <li><strong>Chat review</strong> — paste a transcript; Tone scores goal drift per exchange and returns concrete steering tips</li>
+              <li><strong>llmtest</strong> — “pytest for AI behavior”: semantic <code>equals</code> / tone / <code>excludes</code> assertions, baselines, and a GitHub Action that fails PRs on drift</li>
+              <li>Chat review <strong>Generate llmtest</strong> turns an observed drift into a paste-ready CI suite (production signal → prevention)</li>
+              <li>FastAPI + React dashboard; JWT/Google auth; OpenAI-compatible connectors; live at tonehq.xyz / api.tonehq.xyz</li>
             </ul>
             <ul class="tags">
-              <li>FastAPI</li><li>React</li><li>TypeScript</li><li>ChromaDB</li><li>MMD</li><li>Railway</li>
+              <li>FastAPI</li><li>React</li><li>TypeScript</li><li>ChromaDB</li><li>GitHub Actions</li><li>llmtest</li><li>Railway</li>
             </ul>
             <div class="card-links">
               <a class="text-link" href="https://tonehq.xyz" target="_blank" rel="noopener noreferrer">tonehq.xyz</a>
@@ -340,7 +343,7 @@
           <div class="skill-group">
             <h3>Data &amp; AI</h3>
             <ul class="tags">
-              <li>Machine Learning</li><li>Computer Vision</li><li>OCR</li><li>LLMs</li><li>RAG</li><li>ChromaDB</li><li>Ollama</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li>
+              <li>Machine Learning</li><li>Computer Vision</li><li>OCR</li><li>LLMs</li><li>Embeddings</li><li>RAG</li><li>ChromaDB</li><li>Ollama</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li>
             </ul>
           </div>
           <div class="skill-group skill-group-wide">
