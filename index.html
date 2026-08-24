@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM reliability stack (Tone + llmtest), on-device AI (Omnitrix), full-stack systems, and computer vision." />
+  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM reliability stack (Tone + llmtest), Review AI Detector Chrome extension, on-device AI (Omnitrix), full-stack systems, and computer vision." />
   <title>Saarth Kishore | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,7 +56,7 @@
           </div>
           <div class="stat">
             <dt>Live</dt>
-            <dd>Tone · Beyond Art · Aggies</dd>
+            <dd>Tone · Review AI · Aggies</dd>
           </div>
           <div class="stat">
             <dt>60 FPS</dt>
@@ -80,8 +80,10 @@
           <p>
             I also ship AI products: <strong>Tone</strong> is an LLM reliability stack — production drift
             monitoring, per-conversation goal alignment, and <code>llmtest</code> (pytest for AI behavior)
-            that turns a drifted chat into a CI suite — and <strong>Omnitrix</strong> is an always-on
-            desktop assistant (screen-aware context, local Ollama, vector memory) engineered for privacy and speed.
+            that turns a drifted chat into a CI suite — <strong>Review AI Detector</strong> is a Chrome
+            extension + FastAPI stack that scores product and business reviews across 13 sites (listing trust,
+            template clusters, posting bursts) — and <strong>Omnitrix</strong> is an always-on desktop assistant
+            (screen-aware context, local Ollama, vector memory) engineered for privacy and speed.
           </p>
           <p>
             Looking for teams that care about impact: internships, research labs, and ambitious product builds
@@ -165,6 +167,38 @@
               <a class="text-link" href="https://tonehq.xyz" target="_blank" rel="noopener noreferrer">tonehq.xyz</a>
               <a class="text-link" href="https://github.com/Saarth09/Tone" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a class="text-link" href="https://github.com/Saarth09/Tone/tree/main/packages/llmtest" target="_blank" rel="noopener noreferrer">llmtest</a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Review AI Detector</h3>
+                <p class="card-meta">Chrome extension + ML API for review trust on 13 sites</p>
+              </div>
+              <div class="card-meta-right">
+                <span class="pill pill-live">Chrome Web Store · in review</span>
+                <time class="card-dates">Aug 2026 – Present</time>
+              </div>
+            </header>
+            <p class="card-problem">
+              Shoppers can’t tell if reviews are human or AI-generated. Built a niche detector for
+              short, informal product reviews — with a high-precision threshold so real customers
+              aren’t falsely flagged.
+            </p>
+            <ul class="card-bullets">
+              <li><strong>Manifest V3 extension</strong> — per-site adapters (Amazon, Yelp, Booking, Trustpilot, +9 more); listing trust card, per-review badges, hover signals</li>
+              <li><strong>FastAPI on Render</strong> — calibrated sklearn hybrid + listing analysis: template clusters, posting bursts, adjusted ratings, visit history sparklines</li>
+              <li>Trained on matched human/AI review pairs; evasion-tested (paraphrase, typos, splice); false-positive rate prioritized over raw accuracy</li>
+              <li>Production API at ai-comment-checker.onrender.com; extension submitted to Chrome Web Store Aug 2026</li>
+            </ul>
+            <ul class="tags">
+              <li>Chrome Extension</li><li>FastAPI</li><li>scikit-learn</li><li>JavaScript</li><li>Python</li><li>Docker</li><li>Render</li>
+            </ul>
+            <div class="card-links">
+              <a class="text-link" href="https://github.com/Saarth09/AI-Comment-Checker" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="text-link" href="https://ai-comment-checker.onrender.com/health" target="_blank" rel="noopener noreferrer">API</a>
+              <a class="text-link" href="https://raw.githubusercontent.com/Saarth09/AI-Comment-Checker/main/extension/privacy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
             </div>
           </article>
 
@@ -344,7 +378,7 @@
           <div class="skill-group">
             <h3>Data &amp; AI</h3>
             <ul class="tags">
-              <li>Machine Learning</li><li>Computer Vision</li><li>OCR</li><li>LLMs</li><li>Embeddings</li><li>RAG</li><li>ChromaDB</li><li>Ollama</li><li>llmtest</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li>
+              <li>Machine Learning</li><li>Computer Vision</li><li>OCR</li><li>LLMs</li><li>Embeddings</li><li>RAG</li><li>ChromaDB</li><li>Ollama</li><li>llmtest</li><li>Chrome Extensions</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li>
             </ul>
           </div>
           <div class="skill-group skill-group-wide">
