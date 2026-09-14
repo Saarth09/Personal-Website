@@ -401,6 +401,79 @@ code {
   margin-bottom: 0.85rem;
 }
 
+.card-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 0.85rem;
+  margin: 0 0 1.1rem;
+  padding: 0.85rem 0.9rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.card-metrics-prominent {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem 0.5rem;
+  padding: 1rem 0.85rem;
+  border-color: var(--border-strong);
+}
+
+.card-metric dt {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  line-height: 1.25;
+}
+
+.card-metrics-prominent .card-metric dt {
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.35rem;
+}
+
+.card-metric .metric-from {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+.card-metric .metric-arrow {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.card-metric .metric-to {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.card-metric dd {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+  line-height: 1.35;
+}
+
+.card-metrics-prominent .card-metric dd {
+  font-size: 0.78rem;
+  margin-top: 0.3rem;
+}
+
+.card-metric .metric-note {
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  opacity: 0.9;
+}
+
 .card-bullets {
   list-style: none;
   margin-bottom: 1rem;
@@ -750,6 +823,72 @@ body.case-page {
   gap: 0.6rem;
 }
 
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.impact-card {
+  padding: 0.9rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.impact-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.4rem !important;
+}
+
+.impact-delta {
+  font-family: var(--mono);
+  font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.45rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.45rem;
+}
+
+.impact-delta .from {
+  color: var(--muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  opacity: 0.85;
+}
+
+.impact-delta .arrow {
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.impact-delta .to {
+  color: var(--ink);
+}
+
+.impact-detail {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-bottom: 0 !important;
+  line-height: 1.4;
+}
+
+.metric-footnote {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.85rem !important;
+}
+
 .case-btn {
   display: inline-flex;
   align-items: center;
@@ -983,8 +1122,11 @@ body.case-page {
   .project-grid-2,
   .skills-grid,
   .edu-grid,
-  .case-grid-2 {
-    grid-template-columns: 1fr;
+  .case-grid-2,
+  .impact-grid,
+  .card-metrics,
+  .card-metrics-prominent {
+    grid-template-columns: 1fr 1fr;
   }
 
   .card-head {

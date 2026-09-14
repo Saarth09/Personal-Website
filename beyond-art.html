@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=21" />
+  <link rel="stylesheet" href="styles.css?v=25" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body class="case-page">
@@ -47,9 +47,64 @@
       </div>
     </section>
 
+    <section id="numbers" class="case-section">
+      <h2 class="case-h2">By the numbers</h2>
+      <p>
+        Baselines from the first playable slice (local melee forge + slow vision score) versus the
+        shipped Mode&nbsp;B build on itch.io.
+      </p>
+      <div class="impact-grid" aria-label="Beyond Art before and after metrics">
+        <article class="impact-card">
+          <p class="impact-label">Forge categories</p>
+          <p class="impact-delta"><span class="from">1</span><span class="arrow" aria-hidden="true">→</span><span class="to">3</span></p>
+          <p class="impact-detail">Melee-only prototype → melee + ranged + body customize forges (Q / R / E).</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">Playable object classes</p>
+          <p class="impact-delta"><span class="from">2</span><span class="arrow" aria-hidden="true">→</span><span class="to">15+</span></p>
+          <p class="impact-detail">Sword / generic weapon → swords, axes, spears, daggers, pistols, rifles, bows, bazookas, legs, arms, and aliases.</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">Score-step latency</p>
+          <p class="impact-delta"><span class="from">10–90s</span><span class="arrow" aria-hidden="true">→</span><span class="to">&lt;1s</span></p>
+          <p class="impact-detail">Ollama validate waits and Gemini score hangs → hybrid path scores with instant ink metrics after validate.</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">End-to-end “Judging…”</p>
+          <p class="impact-delta"><span class="from">Hang / 60–180s</span><span class="arrow" aria-hidden="true">→</span><span class="to">~few sec</span></p>
+          <p class="impact-detail">Stuck confirm UX and raised HTTP timeouts → validate + instant score; ink fallback when cloud Gemini fails.</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">Public Windows builds</p>
+          <p class="impact-delta"><span class="from">0</span><span class="arrow" aria-hidden="true">→</span><span class="to">2</span></p>
+          <p class="impact-detail">No external players → itch.io channels <code>0.1.0</code> and <code>0.1.1</code> (~634&nbsp;MB each).</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">Who can run the judge</p>
+          <p class="impact-delta"><span class="from">1 PC</span><span class="arrow" aria-hidden="true">→</span><span class="to">Anyone</span></p>
+          <p class="impact-detail">Mode&nbsp;A disk path on the author machine → Mode&nbsp;B HTTPS + Base64 to Render for packaged players.</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">Download package size</p>
+          <p class="impact-delta"><span class="from">~1.15&nbsp;GB</span><span class="arrow" aria-hidden="true">→</span><span class="to">634&nbsp;MB</span></p>
+          <p class="impact-detail">Raw Shipping folder over itch’s 1&nbsp;GB web cap → butler-compressed Windows zip players can fetch.</p>
+        </article>
+        <article class="impact-card">
+          <p class="impact-label">Cloud Gemini reliability</p>
+          <p class="impact-delta"><span class="from">Fail-closed</span><span class="arrow" aria-hidden="true">→</span><span class="to">Playable</span></p>
+          <p class="impact-detail">Datacenter IP blocks → soft-accept + local ink validate so melee / ranged / body still ship stats.</p>
+        </article>
+      </div>
+      <p class="metric-footnote">
+        Distribution measured as public Windows builds on itch.io (versions 0.1.0 and 0.1.1).
+        Swap in dashboard download / view / play counts when you want an exact player metric.
+      </p>
+    </section>
+
     <nav class="case-toc" aria-label="On this page">
       <h2 class="case-h2">On this page</h2>
       <ol class="case-toc-list">
+        <li><a href="#numbers">By the numbers</a></li>
         <li><a href="#hook">The hook</a></li>
         <li><a href="#loop">Player loop</a></li>
         <li><a href="#systems">Gameplay systems</a></li>
