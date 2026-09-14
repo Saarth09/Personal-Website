@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM reliability stack (Tone + llmtest), Review AI Detector Chrome extension, on-device AI (Omnitrix), full-stack systems, and computer vision." />
+  <meta name="description" content="Saarth Kishore — Software Engineer at UC Davis. Production campus data platforms (ASUCD IRL), LLM reliability stack (Tone + llmtest), Review AI Detector, Omnitrix, Motion Sense Game (Unity + MediaPipe), full-stack systems, and computer vision." />
   <title>Saarth Kishore | Software Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=22" />
+  <link rel="stylesheet" href="styles.css?v=23" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -59,8 +59,8 @@
             <dd>Tone · Review AI · Aggies</dd>
           </div>
           <div class="stat">
-            <dt>60 FPS</dt>
-            <dd>Custom physics engine</dd>
+            <dt>Hands-free</dt>
+            <dd>Motion Sense Game</dd>
           </div>
         </dl>
       </div>
@@ -86,8 +86,13 @@
             (screen-aware context, local Ollama, vector memory) engineered for privacy and speed.
           </p>
           <p>
+            On the games / CV side, <strong>Motion Sense Game</strong> is a shipped Unity 6 title controlled
+            entirely by webcam hand gestures — MediaPipe landmarking, a dual-hand gesture state machine, and a
+            WebSocket bridge into God of War–style third-person gameplay — no controller required.
+          </p>
+          <p>
             Looking for teams that care about impact: internships, research labs, and ambitious product builds
-            in full-stack, data platforms, LLM systems, and computer vision.
+            in full-stack, data platforms, LLM systems, computer vision, and interactive software.
           </p>
         </div>
       </div>
@@ -258,6 +263,35 @@
               <a class="text-link" href="beyond-art.html">Case study</a>
             </div>
           </article>
+
+          <article class="project-card reveal">
+            <header class="card-head">
+              <div>
+                <h3 class="card-title">Motion Sense Game</h3>
+                <p class="card-meta">Hands-free Unity action — webcam is the controller</p>
+              </div>
+              <div class="card-meta-right">
+                <span class="pill pill-live">Shipped</span>
+                <time class="card-dates">Aug 2026 – Present</time>
+              </div>
+            </header>
+            <p class="card-problem">
+              Controllers break immersion when you want to play standing up. Built a full dual-hand
+              gesture pipeline so walk, combat, inventory, and a God of War–style camera all run from a laptop webcam.
+            </p>
+            <ul class="card-bullets">
+              <li>MediaPipe Hands → static + dynamic classifiers → priority dispatcher → JSON WebSocket → Unity 6</li>
+              <li>Left hand: walk, jump, slash, punch, blast · Right hand: fist orbit look, inventory, pointer, accept/deny</li>
+              <li>Simultaneous two-hand input; grounded jump, attack feedback, and camera-relative locomotion shipped</li>
+            </ul>
+            <ul class="tags">
+              <li>Unity 6</li><li>MediaPipe</li><li>OpenCV</li><li>Python</li><li>WebSockets</li><li>C#</li><li>Computer Vision</li>
+            </ul>
+            <div class="card-links">
+              <a class="text-link" href="https://github.com/Saarth09/MotionSenseGame" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="text-link" href="motion-sense-game.html">Case study</a>
+            </div>
+          </article>
         </div>
 
         <div class="reveal" style="margin-top: 3rem;">
@@ -384,7 +418,7 @@
           <div class="skill-group skill-group-wide">
             <h3>Game Development</h3>
             <ul class="tags">
-              <li>Unreal Engine 5</li><li>Sandbox Design</li><li>Gameplay Systems</li><li>Physics</li><li>Procedural Generation</li><li>Pygame</li><li>Blueprints</li>
+              <li>Unreal Engine 5</li><li>Unity 6</li><li>Sandbox Design</li><li>Gameplay Systems</li><li>Physics</li><li>Procedural Generation</li><li>Pygame</li><li>Blueprints</li><li>MediaPipe</li><li>Gesture UX</li>
             </ul>
           </div>
         </div>

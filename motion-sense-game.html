@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Motion Sense Game — hands-free Unity action game by Saarth Kishore. MediaPipe hand tracking, gesture state machine, WebSocket bridge, God of War–style third-person camera." />
+  <title>Motion Sense Game · Saarth Kishore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=23" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="case-page">
+  <header class="case-top">
+    <a class="case-back" href="index.html">← Portfolio</a>
+    <span class="case-brand">Saarth Kishore</span>
+    <a class="case-play" href="https://github.com/Saarth09/MotionSenseGame" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </header>
+
+  <main class="case-main">
+    <section class="case-hero">
+      <span class="stamp stamp-live">Shipped</span>
+      <p class="case-kicker">Case study · Personal project · Aug 2026 – Present</p>
+      <h1 class="case-title">Motion Sense Game</h1>
+      <p class="case-tagline">A hands-free third-person action game — <em>your webcam is the controller.</em></p>
+      <p class="case-lede">
+        Motion Sense Game maps real-time hand gestures to full gameplay: walk, jump, slash, punch,
+        blast, inventory, and a God of War–style orbit camera. A Python + MediaPipe vision stack
+        classifies static poses and dynamic trajectories, then streams JSON events over a local
+        WebSocket into Unity 6 — so computer vision and game systems stay fully decoupled and
+        production-ready.
+      </p>
+      <ul class="tags case-tags">
+        <li>Unity 6</li>
+        <li>MediaPipe Hands</li>
+        <li>OpenCV</li>
+        <li>Python</li>
+        <li>WebSockets</li>
+        <li>C#</li>
+        <li>Computer Vision</li>
+        <li>Gesture UX</li>
+      </ul>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://github.com/Saarth09/MotionSenseGame" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a class="case-btn" href="index.html">Back to portfolio</a>
+      </div>
+    </section>
+
+    <nav class="case-toc" aria-label="On this page">
+      <h2 class="case-h2">On this page</h2>
+      <ol class="case-toc-list">
+        <li><a href="#hook">The hook</a></li>
+        <li><a href="#controls">Control scheme</a></li>
+        <li><a href="#pipeline">Vision → game pipeline</a></li>
+        <li><a href="#gestures">Static vs dynamic gestures</a></li>
+        <li><a href="#camera">Third-person camera</a></li>
+        <li><a href="#hard">Hard problems solved</a></li>
+        <li><a href="#stack">Stack &amp; role</a></li>
+      </ol>
+    </nav>
+
+    <section id="hook" class="case-section">
+      <h2 class="case-h2">The hook</h2>
+      <p>
+        Controllers are great — until you want to play standing up with nothing in your hands.
+        Motion Sense Game treats the webcam as a full input device: left hand owns locomotion and
+        combat, right hand owns look and UI, and both work at the same time.
+      </p>
+      <ul class="bullet-list">
+        <li><strong>No wearables</strong> — laptop camera in, playable character out.</li>
+        <li><strong>Game-quality feel</strong> — orbit camera, grounded jump, attack feedback, not a demo overlay.</li>
+        <li><strong>Clean architecture</strong> — CV process and Unity never share memory; they speak JSON events.</li>
+      </ul>
+    </section>
+
+    <section id="controls" class="case-section">
+      <h2 class="case-h2">Control scheme</h2>
+      <table class="case-table">
+        <thead>
+          <tr><th>Hand</th><th>Gesture</th><th>Gameplay</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Left</td><td>Two fingers down + motion</td><td>Walk (camera-relative)</td></tr>
+          <tr><td>Left</td><td>Two fingers curl up</td><td>Jump (ground-gated)</td></tr>
+          <tr><td>Left</td><td>Open palm, fingers spread</td><td>Blast</td></tr>
+          <tr><td>Left</td><td>Fingers together + swipe</td><td>Slash</td></tr>
+          <tr><td>Left</td><td>Fist + forward thrust</td><td>Punch</td></tr>
+          <tr><td>Right</td><td>Fist + move</td><td>Orbit camera look</td></tr>
+          <tr><td>Right</td><td>Back of hand + finger count</td><td>Inventory open / select</td></tr>
+          <tr><td>Right</td><td>Index pointer / thumbs</td><td>Aim cursor · accept / deny</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="pipeline" class="case-section">
+      <h2 class="case-h2">Vision → game pipeline</h2>
+      <ol class="bullet-list">
+        <li><strong>Capture</strong> — OpenCV webcam frames → MediaPipe Hand Landmarker (21 landmarks × up to 2 hands).</li>
+        <li><strong>Classify</strong> — pure functions for static poses; rolling buffers for walk / slash / punch / look deltas.</li>
+        <li><strong>Dispatch</strong> — priority state machine (inventory / combat / locomotion) emits small JSON events.</li>
+        <li><strong>Bridge</strong> — Python WebSocket server on <code>ws://127.0.0.1:8765</code>.</li>
+        <li><strong>Play</strong> — Unity client marshals events to the main thread and drives Rigidbody + orbit camera.</li>
+      </ol>
+      <p class="panel-quote-inline">Same pattern as a hardware controller driver — gestures are just another input device.</p>
+    </section>
+
+    <section id="gestures" class="case-section">
+      <h2 class="case-h2">Static vs dynamic gestures</h2>
+      <p>
+        The codebase keeps a hard split from day one: single-frame landmark shapes vs sequences
+        over time. That separation is what keeps blast from stealing slash, and inventory from
+        stealing walk when lighting or orientation is noisy.
+      </p>
+      <ul class="bullet-list">
+        <li><strong>Static</strong> — open palm blast, thumbs, finger-count inventory, pointer tip.</li>
+        <li><strong>Dynamic</strong> — walk cadence, jump pose edges, lateral slash, punch thrust, fist look deltas.</li>
+        <li><strong>Orientation scoring</strong> — palm vs back using depth + 3D normals so inventory never false-fires on an open palm.</li>
+      </ul>
+    </section>
+
+    <section id="camera" class="case-section">
+      <h2 class="case-h2">Third-person camera</h2>
+      <p>
+        Right-hand fist look is not freelook FPS. The camera orbits the player at a fixed distance
+        with shoulder bias, smooth follow, and pitch clamps — the same “stuck behind you” feel as
+        God of War–style action games. Walking always moves along camera planar forward so look and
+        locomotion stay aligned.
+      </p>
+    </section>
+
+    <section id="hard" class="case-section">
+      <h2 class="case-h2">Hard problems solved</h2>
+      <div class="case-challenge">
+        <h3 class="case-h3">Black / feedback webcam frames</h3>
+        <p>Forced 1280×720 and screen-in-camera loops killed the feed. Native resolution probing, buffer flush, and a small preview window fixed capture reliability on Windows.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">Gesture collisions</h3>
+        <p>Open palm was firing walk/slash. Split blast (spread fingers) vs slash (fingers together + swipe), locked walk to downward two-finger motion, and assigned left/right hand roles.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">Unity not receiving look events</h3>
+        <p>NumPy scalars crashed JSON encode; WebSocket callbacks ran off the main thread. Added JSON sanitization and a concurrent queue drained in <code>Update</code>.</p>
+      </div>
+      <div class="case-challenge">
+        <h3 class="case-h3">Camera feel</h3>
+        <p>First look implementation rotated like FPS. Rebuilt as a world-space orbit with look-at focus, shoulder offset, and camera-relative walk.</p>
+      </div>
+    </section>
+
+    <section id="stack" class="case-section">
+      <h2 class="case-h2">Stack &amp; what I owned</h2>
+      <p>
+        Solo end-to-end: gesture research, MediaPipe pipeline, state machine, WebSocket protocol,
+        Unity input router, third-person camera, and player feel systems.
+      </p>
+      <ul class="tags">
+        <li>Python 3.12</li>
+        <li>MediaPipe Tasks</li>
+        <li>OpenCV</li>
+        <li>NumPy</li>
+        <li>websockets</li>
+        <li>Unity 6 URP</li>
+        <li>C#</li>
+        <li>Rigidbody gameplay</li>
+        <li>Gesture UX</li>
+      </ul>
+      <h3 class="case-h3">Status</h3>
+      <p>
+        Full control loop shipped and playable: dual-hand gestures, combat events, inventory hooks,
+        and third-person camera. Source on GitHub; next iteration is combat enemies, inventory loadouts,
+        and a polished arena level.
+      </p>
+    </section>
+
+    <section class="case-section case-footer-panel">
+      <p class="case-footer-line">Motion Sense Game · Saarth Kishore · UC Davis Computer Engineering</p>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://github.com/Saarth09/MotionSenseGame" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="case-btn" href="index.html">Portfolio</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
