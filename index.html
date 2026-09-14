@@ -8,11 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
-<<<<<<< Updated upstream
-  <link rel="stylesheet" href="styles.css?v=24" />
-=======
-  <link rel="stylesheet" href="styles.css?v=25" />
->>>>>>> Stashed changes
+  <link rel="stylesheet" href="styles.css?v=26" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -223,10 +219,36 @@
               short, informal product reviews — with a high-precision threshold so real customers
               aren’t falsely flagged.
             </p>
+            <dl class="card-metrics card-metrics-prominent card-metrics-3" aria-label="Review AI Detector metrics">
+              <div class="card-metric">
+                <dt>13</dt>
+                <dd>Supported review sites</dd>
+              </div>
+              <div class="card-metric">
+                <dt>1.00 / 0.90</dt>
+                <dd>Precision / recall (AI) · held-out test</dd>
+              </div>
+              <div class="card-metric">
+                <dt>0.00</dt>
+                <dd>False-positive rate on humans</dd>
+              </div>
+              <div class="card-metric">
+                <dt>400</dt>
+                <dd>Reviews evaluated · 280 / 60 / 60 split</dd>
+              </div>
+              <div class="card-metric">
+                <dt>2</dt>
+                <dd>Chrome Web Store installs</dd>
+              </div>
+              <div class="card-metric">
+                <dt>0.72</dt>
+                <dd>Production AI threshold</dd>
+              </div>
+            </dl>
             <ul class="card-bullets">
-              <li><strong>Manifest V3 extension</strong> — per-site adapters (Amazon, Yelp, Booking, Trustpilot, +9 more); listing trust card, per-review badges, hover signals</li>
+              <li><strong>Manifest V3 extension</strong> — per-site adapters across 13 shopping / review sites; listing trust card, per-review badges, hover signals</li>
               <li><strong>FastAPI on Render</strong> — calibrated sklearn hybrid + listing analysis: template clusters, posting bursts, adjusted ratings, visit history sparklines</li>
-              <li>Trained on matched human/AI review pairs; evasion-tested (paraphrase, typos, splice); false-positive rate prioritized over raw accuracy</li>
+              <li>Held-out hybrid test (n=60): <strong>precision 1.00</strong>, <strong>recall 0.90</strong>, <strong>FPR 0.00</strong> at threshold 0.72; trained on 400 matched human/AI reviews</li>
               <li>Production API at ai-comment-checker.onrender.com; <strong>live on the Chrome Web Store</strong></li>
             </ul>
             <ul class="tags">
