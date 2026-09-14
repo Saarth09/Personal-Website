@@ -8,7 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+<<<<<<< Updated upstream
+  <link rel="stylesheet" href="styles.css?v=24" />
+=======
   <link rel="stylesheet" href="styles.css?v=25" />
+>>>>>>> Stashed changes
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
@@ -160,12 +164,38 @@
               catch behavioral regressions before merge, monitor production, and diagnose a single chat
               when it goes off-goal.
             </p>
+            <dl class="card-metrics card-metrics-prominent card-metrics-3" aria-label="Tone reliability metrics">
+              <div class="card-metric">
+                <dt>15</dt>
+                <dd>Runtime probes · 5 tone / 5 fact / 5 persona</dd>
+              </div>
+              <div class="card-metric">
+                <dt>≤5&nbsp;min</dt>
+                <dd>Scheduled sample cadence</dd>
+              </div>
+              <div class="card-metric">
+                <dt>3</dt>
+                <dd>Drift signals · MMD + KL + cosine</dd>
+              </div>
+              <div class="card-metric">
+                <dt>7+</dt>
+                <dd>LLM presets · any OpenAI-compatible</dd>
+              </div>
+              <div class="card-metric">
+                <dt>3</dt>
+                <dd>llmtest assertion types</dd>
+              </div>
+              <div class="card-metric">
+                <dt>0.35–0.40</dt>
+                <dd>Category alert thresholds</dd>
+              </div>
+            </dl>
             <ul class="card-bullets">
-              <li><strong>Runtime monitor</strong> — scheduled tone / fact / persona probes, MiniLM + ChromaDB, MMD / KL / cosine heatmap alerts, and background jobs so long sample runs don’t die on proxy timeouts</li>
+              <li><strong>Runtime monitor</strong> — 15 curated probes on a ≤5&nbsp;min cycle; MiniLM + ChromaDB; MMD / KL / cosine heatmap alerts (category floors 0.35–0.40); detector unit tests separate identical vs shifted corpora</li>
               <li><strong>Chat review</strong> — paste a transcript or upload a ChatGPT export; per-turn goal-drift timeline, peak/first-alert, and steering tips from the connected LLM or Tone heuristics</li>
-              <li><strong>llmtest</strong> — “pytest for AI behavior”: semantic <code>equals</code> / tone / <code>excludes</code> assertions, snapshot baselines, and a GitHub Action that fails PRs on drift</li>
-              <li><strong>Generate llmtest</strong> — from a drifted chat, emit distinct probes with real-reply baselines (style personas + adversarial excludes), then copy-paste into CI — production signal → prevention</li>
-              <li>FastAPI + React; JWT / Google auth; encrypted API keys; OpenAI-compatible connectors; live at tonehq.xyz / api.tonehq.xyz</li>
+              <li><strong>llmtest</strong> — “pytest for AI behavior”: semantic <code>equals</code> / tone / <code>excludes</code> assertions, snapshot baselines, example 3-test suite, and a GitHub Action that fails PRs on drift</li>
+              <li><strong>Generate llmtest</strong> — from a drifted chat, emit distinct probes with claim-level baselines (style personas + adversarial excludes), then copy-paste into CI — production signal → prevention</li>
+              <li><strong>Connectors</strong> — presets for OpenAI, OpenRouter, Groq, Together, DeepSeek, Fireworks, Ollama, plus any OpenAI-compatible <code>/v1</code> endpoint; JWT / Google auth; live at tonehq.xyz</li>
             </ul>
             <ul class="tags">
               <li>FastAPI</li><li>React</li><li>TypeScript</li><li>ChromaDB</li><li>GitHub Actions</li><li>llmtest</li><li>Railway</li>

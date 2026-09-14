@@ -419,6 +419,10 @@ code {
   border-color: var(--border-strong);
 }
 
+.card-metrics-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .card-metric dt {
   font-family: var(--mono);
   font-size: 1.05rem;
@@ -1125,7 +1129,8 @@ body.case-page {
   .case-grid-2,
   .impact-grid,
   .card-metrics,
-  .card-metrics-prominent {
+  .card-metrics-prominent,
+  .card-metrics-3 {
     grid-template-columns: 1fr 1fr;
   }
 
