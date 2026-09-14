@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Harvest Vault — Roblox farming simulator by Saarth Kishore. Plant crops, hatch pets, unlock a private estate, rebirth progression, DataStores, and live monetization." />
+  <title>Harvest Vault · Saarth Kishore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=24" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%95%B7%EF%B8%8F%3C/text%3E%3C/svg%3E" />
+</head>
+<body class="case-page">
+  <header class="case-top">
+    <a class="case-back" href="index.html">← Portfolio</a>
+    <span class="case-brand">Saarth Kishore</span>
+    <a class="case-play" href="https://github.com/Saarth09/Roblox-Farm-Simulator" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </header>
+
+  <main class="case-main">
+    <section class="case-hero">
+      <span class="stamp stamp-live">Live on Roblox</span>
+      <p class="case-kicker">Case study · Personal project · Aug 2026 – Present</p>
+      <h1 class="case-title">Harvest Vault</h1>
+      <p class="case-tagline">Roblox farming simulator — <em>grow crops, hatch pets, unlock a private estate.</em></p>
+      <p class="case-lede">
+        Harvest Vault is a full-loop Roblox farm game with server-authoritative planting and harvest,
+        pet followers, rebirth progression, world shops, and a private estate zone players unlock and
+        expand. Built in Luau with DataStores, remotes, and a cohesive client UI — published and playable
+        on Roblox.
+      </p>
+      <ul class="tags case-tags">
+        <li>Roblox</li>
+        <li>Luau</li>
+        <li>DataStores</li>
+        <li>Gameplay Systems</li>
+        <li>Economy Design</li>
+        <li>UI / UX</li>
+      </ul>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://github.com/Saarth09/Roblox-Farm-Simulator" target="_blank" rel="noopener noreferrer">View source</a>
+        <a class="case-btn" href="index.html#projects">Back to portfolio</a>
+      </div>
+    </section>
+
+    <nav class="case-toc" aria-label="On this page">
+      <h2 class="case-h2">On this page</h2>
+      <ol class="case-toc-list">
+        <li><a href="#loop">Core loop</a></li>
+        <li><a href="#systems">Systems</a></li>
+        <li><a href="#estate">Private estate</a></li>
+        <li><a href="#arch">Architecture</a></li>
+        <li><a href="#ship">Shipping</a></li>
+        <li><a href="#stack">Stack &amp; role</a></li>
+      </ol>
+    </nav>
+
+    <section id="loop" class="case-section">
+      <h2 class="case-h2">Core loop</h2>
+      <p>
+        Select a seed → plant on soil pads → wait through weather-aware growth → harvest for coins →
+        buy better seeds, land, gear, and pets → rebirth for permanent multipliers. The loop is tuned
+        so early sessions teach planting quickly while late game opens estate scale and automation.
+      </p>
+    </section>
+
+    <section id="systems" class="case-section">
+      <h2 class="case-h2">Systems</h2>
+      <ul class="bullet-list">
+        <li><strong>Farming</strong> — server-validated plant / harvest, mutations, vault-at-risk coins, free seed ladder by rebirth.</li>
+        <li><strong>Shops</strong> — world stalls (seeds, land, pets, gear, decor) plus a phone shop for body / auto / Robux packs.</li>
+        <li><strong>Pets</strong> — egg hatchery, inventory vs follow caps, sell / grow / mutation bonuses while following.</li>
+        <li><strong>Gear</strong> — sprinklers, fertilizer, growth lamps with tiered unlocks and farm prop visuals.</li>
+        <li><strong>Automation</strong> — auto farmer, planter, and seed buyer with a seed picker UI.</li>
+        <li><strong>Meta</strong> — daily rewards, leaderboards, settings (mute music/SFX, hide emotes), SFX + sell feedback.</li>
+      </ul>
+    </section>
+
+    <section id="estate" class="case-section">
+      <h2 class="case-h2">Private estate</h2>
+      <p>
+        After filling hub land, players unlock a private estate zone: up to 64 fields, personal shop
+        stalls, decor per field, and same-server visits so friends can browse each other’s markets.
+        Hub and estate plots relocate cleanly through PlotService / EstateService.
+      </p>
+    </section>
+
+    <section id="arch" class="case-section">
+      <h2 class="case-h2">Architecture</h2>
+      <ul class="bullet-list">
+        <li><strong>Server modules</strong> — CropService, ShopService, PlotService, EstateService, PetService, DataManager, and more under <code>ServerScriptService/Modules</code>.</li>
+        <li><strong>Shared catalogs</strong> — Config, SeedData, ShopCatalog, PetData, DecorCatalog in ReplicatedStorage.</li>
+        <li><strong>Client</strong> — large LocalScript UI (HUD, shops, hotbar, estate, settings, audio, toasts).</li>
+        <li><strong>Persistence</strong> — versioned DataStore schema with safe load (never overwrite cloud data after a failed load).</li>
+      </ul>
+    </section>
+
+    <section id="ship" class="case-section">
+      <h2 class="case-h2">Shipping</h2>
+      <p>
+        Experience published on Roblox with store icon / thumbnails, Developer Products for coin packs,
+        and a wipeable DataStore version for clean launches. Source and Studio install docs live on GitHub
+        for portfolio review.
+      </p>
+    </section>
+
+    <section id="stack" class="case-section">
+      <h2 class="case-h2">Stack &amp; role</h2>
+      <p>
+        Solo build end-to-end: systems design, Luau server/client, economy balancing, UI, and publish.
+        Stack: Roblox Luau, RemoteEvents, DataStores, MarketplaceService.
+      </p>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://github.com/Saarth09/Roblox-Farm-Simulator" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="case-btn" href="index.html">Back to portfolio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <div class="shell">
+      <p class="case-footer-line">Harvest Vault · Saarth Kishore · UC Davis Computer Engineering</p>
+      <div class="case-cta-row">
+        <a class="case-btn case-btn-primary" href="https://github.com/Saarth09/Roblox-Farm-Simulator" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a class="case-btn" href="index.html">Portfolio</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
